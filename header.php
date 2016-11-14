@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+	<title><?php echo $CONF['SITE_TITLE']; ?></title>
+	<link rel="stylesheet" type="text/css" href="lib/main.css" />
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/main.js"></script>
+</head>
+<body>
+	<div class="loading" style="display:none;"></div>
+	<div class="nav">
+		<ul>
+			<a href="index.php"><li>صفحه اصلی</li></a>
+			<a href="cats.php"><li>موضوعات</li></a>
+			<a href="posts.php?N=about"><li>درباره</li></a>
+			<a href="posts.php?N=contact"><li>ارتباط</li></a>
+			<?php if( logedin() ){ ?>
+				<a href=""><li></li></a>
+			<?php }else{ ?>
+				<a href=""><li></li></a>
+				<a href=""><li></li></a>
+			<?php } ?>
+		</ul>
+	</div>
+	<div class="header"><span><?php echo $CONF['SITE_TITLE']; ?></span></div>
+	<div class="toptext"><span>سخن بزرگان : </span><?php get_text(); ?></div>
+
+	<div class="body">

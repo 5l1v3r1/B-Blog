@@ -1,0 +1,198 @@
+@font-face {
+	font-family: 'byekan';
+	src: url('BYekan.eot?#') format('eot'),  /* IE6ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ8 */
+	url('BYekan.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+	url('BYekan.ttf') format('truetype');  /* Saf3ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â5, Chrome4+, FF3.5, Opera 10+ */
+}
+
+a,a:active, a *,a:active *{
+	cursor: pointer;
+	text-decoration: none !important;
+	border: none;
+	outline: none;
+}
+
+*{
+	transition: all 0.25s ease-in-out 0s;
+}
+
+body{
+	font-family: 'Byekan';
+	direction: rtl;
+	margin: 0px 0px 0px 0px;
+	background-color: #000;
+}
+
+.loading{
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+.nav{
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  height: 50px;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.nav ul{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.nav li{
+  display: inline-block;
+  float: right;
+  color: #FFF;
+  text-align: center;
+  line-height: 50px;
+  margin: 0px;
+  padding: 0px 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav li:hover, .nav a.hover li {
+	background-color: #b3281d;
+}
+
+
+.header {
+	height: 200px;
+	background-image: url('header.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.header span{
+	line-height: 200px;
+	color: #FFF;
+	background-color: rgba(0,0,0,0.5);
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+	display: block;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.toptext{
+	line-height: 40px;
+	padding: 0px 10px;
+	font-size: 17px;
+	color: #FFF;
+	background-color: #2e2f35;
+}
+
+
+.toptext span {
+	line-height: 50px;
+	display: inline-block;
+	background-color: #b3281d;
+	padding: 0px 10px;
+	margin: 0px -10px 0px 10px;
+}
+
+.body {
+	padding: 10px 20px;
+	margin: 0px 0px 50px 0px;
+	background-image: url(bg.png);
+	background-color: #3d4ca0;
+}
+
+.post {
+	display: block;
+	margin: 10px 0px;
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 10px;
+	overflow: hidden;
+	max-height: 200px;
+}
+
+.post>a>strong , .post > span {
+	display: block;
+	line-height: 30px;
+	color: #FFF;
+	margin: 0px 5px;
+	padding: 0px 10px;
+	overflow: hidden;
+	white-space: normal;
+}
+
+.post>a>strong{
+	font-size: 20px;
+	line-height: 40px;
+	color: yellow;
+}
+
+.post > span{
+	margin: 0px;
+	max-height: 120px;
+	color: rgba(255,255,255,0.9);
+}
+
+.post button {
+	background-color: #b3281d;
+	border: 0px;
+	color: #FFF;
+	float: left;
+	text-align: center;
+	line-height: 30px;
+	font-family: 'Byekan';
+}
+
+.post > div{
+	line-height: 30px;
+	border-top: 1px dashed #FFF;
+	margin-top: 7px;
+}
+
+.post > div > span{
+	line-height: 30px;
+	padding: 0px 10px;
+	margin: 0px 5px;
+	display: inline-block;
+	color: #FFF;
+}
+
+.post > div strong{
+	color: yellow;
+}
+
+.post:hover{
+	background-color: rgba(0,0,0,0.7);
+}
+
+
+
+
+
+
+
+.footer{
+	background-color: #601616;
+	height: 50px;
+	line-height: 50px;
+	position: fixed;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: -1;
+	color: #FFF;
+	text-align: center;
+}
+
+.footer a{
+	padding: 5px;
+	color: darkblue;
+	background-color: #FFF;
+	border-radius: 5px;
+	text-decoration: none;
+}
