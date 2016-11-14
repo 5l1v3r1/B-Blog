@@ -28,3 +28,21 @@
 	<div class="toptext"><span>سخن بزرگان : </span><?php get_text(); ?></div>
 
 	<div class="body">
+		<div class="menu">
+
+			<?php if( !logedin() ){ ?><div class="logreg">
+				<h3>ورود / عضویت</h3>
+				<div>
+					<input id="user" type="text" value="" placeholder="نام کاربری" />
+					<input id="pass" type="password" value="" placeholder="گذرواژه" />
+					<button id="login">ورود</button>
+					<a href="register.php"><button id="login">عضو نیستم</button></a>
+				</div>
+			</div><?php } ?>
+
+			<div class="cats">
+				<h3></h3>
+			</div>
+		</div>
+
+		<div class="main">
