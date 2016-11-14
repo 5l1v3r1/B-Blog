@@ -41,7 +41,17 @@
 			</div><?php } ?>
 
 			<div class="cats">
-				<h3></h3>
+				<h3>موضوعات</h3>
+				<ul>
+					<?php
+						$CATS = $SQL->query('SELECT ID,NAME FROM CATS;');
+
+						while ($CAT=$CATS->fetch_assoc() )
+						{
+							echo '<a href="cat.php?ID='.$CAT['ID'].'"><li>'.$CAT['NAME'].'</li></a>'.PHP_EOL;
+						}
+					 ?>
+				</ul>
 			</div>
 		</div>
 
