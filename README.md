@@ -1,7 +1,7 @@
 # SimpleBlog
-A simple blog script created by PHP for Web Programming course at university.
+A simple blog script for Web Programming course at university.
 
-## Features
+### Features
 * Full AJAX
 * Posting
 * Comments
@@ -9,10 +9,20 @@ A simple blog script created by PHP for Web Programming course at university.
 * Manage users
 * & etc...
 
+## Getting Started
+This script written with PHP language in front-end and use CSS, JavaScript and jQuery in back-end.
 
-# Installation:
-1.Create a database and import "Blog.sql"
+### Requirements
+```
+* Apache
+* PHP5.6<=
+```
 
-2.Open "/includes/functions.php" and edit $CONFIG.
+### Installation:
+1: Create a database in MYSQL and import "Blog.sql" in the root of document directory.
 
-3.Enjoy...
+2: Delete "Blog.sql" file after import.
+
+3: Open "/includes/functions.php" and edit $CONFIG array.
+
+* Enjoy
