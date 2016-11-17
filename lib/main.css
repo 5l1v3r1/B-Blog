@@ -26,6 +26,7 @@ body{
 	margin: 0px 0px 0px 0px;
 	background-color: #000;
 	height: auto;
+	min-width: 700px;
 }
 
 .loading{
