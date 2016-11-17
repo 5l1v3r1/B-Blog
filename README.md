@@ -25,4 +25,4 @@ This script written with PHP language in front-end and use CSS, JavaScript and j
 
 3: Open "/includes/functions.php" and edit $CONFIG array.
 
-* Enjoy
+* Enjoy...
