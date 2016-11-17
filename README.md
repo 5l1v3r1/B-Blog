@@ -1,7 +1,7 @@
 # SimpleBlog
 A simple blog script created by PHP for Web Programming course at university.
 
-### Features
+## Features
 * Full AJAX
 * Posting
 * Comments
