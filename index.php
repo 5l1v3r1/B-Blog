@@ -14,11 +14,11 @@
 			?>
 
 			<div class="post">
-				<a href="post.php?id=<?php echo $POST['ID']; ?>"><strong><?php echo $POST['TITLE']; ?></strong></a>
-				<span><?php echo $POST['STEXT']; ?></span>
+				<a href="post.php?id=<?php echo $POST['ID']; ?>"><strong><?php eecho($POST['TITLE']); ?></strong></a>
+				<span><?php eecho($POST['STEXT']); ?></span>
 				<div>
 					<a href="post.php?id=<?php echo $POST['ID']; ?>"><button>ادامه مطلب »</button></a>
-					<span><strong>نویسنده: </strong><?php echo $POST['NAME']; ?></span>
+					<span><strong>نویسنده: </strong><?php eecho($POST['NAME']); ?></span>
 					<span><strong>تاریخ ارسال: </strong><?php echo $POST['TIME']; ?></span>
 				</div>
 			</div>

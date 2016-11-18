@@ -18,7 +18,6 @@
 		return $SQL->real_escape_string($STR);
 	}
 
-
 	function logedin(){
 		if( ISSET($_SESSION['UID']) )
 			return true;
@@ -30,4 +29,8 @@
 		echo $TEXTS[ rand(0,count($TEXTS)-1) ];
 	}
 
+	// Echo HTML encoded text
+	function eecho($str){
+		echo htmlentities($str);
+	}
  ?>
