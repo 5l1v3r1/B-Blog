@@ -10,6 +10,7 @@ a,a:active, a *,a:active *{
 	text-decoration: none !important;
 	border: none;
 	outline: none;
+	color: inherit;
 }
 
 button{cursor: pointer;font-family: 'Byekan';}
@@ -352,15 +353,17 @@ p.post-text {
 }
 
 .cmt strong, .cmt span {
-    display: block;
+    display: inline-block;
     line-height: 35px;
     padding: 0px 10px;
-    margin-left: 100px;
 }
 
-.cmt span {
+.cmt > div:first-child span {
     float: left;
     margin-left: 0px;
+    direction: ltr;
+    white-space: pre;
+    font-family: initial;
 }
 
 .cmt > div:first-child {
