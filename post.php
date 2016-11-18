@@ -7,35 +7,31 @@
 
 	if( isset($_GET['id']) && (int)$_GET['id']>0 )
 	{
-		$GET_POST = $SQL->query("SELECT P.ID,P.TITLE,P.STEXT,P.FTEXT,P.TIME,P.TAGS,U.USER,U.NAME,C.ID,C.NAME FROM POSTS AS P, USERS AS U, CA AS C WHERE P.POSTER=U.ID AND P.CAT=C.ID AND P.ID=".scape($_GET['id']).";");
-		var_dump($GET_POST);
+		$GET_POST = $SQL->query("SELECT P.ID,P.TITLE,P.STEXT,P.FTEXT,P.TIME,P.TAGS,U.USER,U.NAME,C.ID,C.NAME FROM POSTS AS P, USERS AS U, CATS AS C WHERE P.POSTER=U.ID AND P.CAT=C.ID AND P.ID=".scape($_GET['id']).";");
 
 		if( $GET_POST!==FALSE AND $GET_POST->num_rows==1 )
 		{
 			$P = $GET_POST->fetch_assoc();
-
 		?>
 			<div class="singlepost">
 				<div class="postsec">
 					<h3><?php eecho($P['TITLE']); ?></h3>
-					<div><p class="post-text"><?php eecho($P['TEXT']); ?></p></div>
+					<div><p class="post-text"><?php eecho($P['STEXT']); ?></p></div>
 				</div>
-
+			<?php if( $P['TAGS']!=='' )
+			{	?>
 				<div class="tags">
 					<h3>برچسب ها</h3>
 					<div><ul>
-						<a href=""><li>برچسب ها</li></a>
-						<a href=""><li>برچسب ها</li></a>
-						<a href=""><li>برچسب ها</li></a>
-						<a href=""><li>برچسب ها</li></a>
-						<a href=""><li>برچسب ها</li></a>
-						<a href=""><li>برچسب ها</li></a>
-						<a href=""><li>برچسب ها</li></a>
-						<a href=""><li>برچسب ها</li></a>
-						<a href=""><li>برچسب ها</li></a>
-						<a href=""><li>برچسب ها</li></a>
+						<?php
+							$TAGS = explode('+', $P['TAGS']);
+							foreach ($TAGS as $TAG)
+							{
+								echo '<a href="tags.php?N='.$TAG.'"><li>'.$TAG.'</li></a>';
+							}	?>
 					</ul></div>
 				</div>
+	<?php } ?>
 
 				<div class="comments">
 					<h3>دیدگاه ها</h3>

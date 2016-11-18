@@ -11,11 +11,13 @@
 	date_default_timezone_set('Asia/Tehran');
 
 
-
-	function scape($STR)
+	/**
+	*	@param string $str
+	*/
+	function scape($str)
 	{
 		global $SQL;
-		return $SQL->real_escape_string($STR);
+		return $SQL->real_escape_string($str);
 	}
 
 	function logedin(){
