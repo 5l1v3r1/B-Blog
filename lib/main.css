@@ -363,7 +363,6 @@ p.post-text {
     margin-left: 0px;
     direction: ltr;
     white-space: pre;
-    font-family: initial;
 }
 
 .cmt > div:first-child {

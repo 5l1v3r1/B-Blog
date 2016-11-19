@@ -47,7 +47,7 @@
 							} ?>
 						<div class="cmt" id="cmt<?php echo $CM['']; ?>">
 							<div>
-								<span><?php echo date("Y-m-j    H:i:s", $CM['TIME']); ?></span>
+								<span><?php echo mds_date("l  j F Y",$CM['TIME']); ?></span>
 								<?php
 									$cmtname = '<strong>'.htmlentities($CM['NAME']).'</strong>';
 									if( !empty($CM['WEB']) )
