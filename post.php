@@ -8,7 +8,7 @@
 	if( isset($_GET['id']) && (int)$_GET['id']>0 )
 	{
 		$POSTID = scape((int)$_GET['id']);
-		$GET_POST = $SQL->query("SELECT P.ID,P.TITLE,P.STEXT,P.FTEXT,P.TIME,P.TAGS,U.USER,U.NAME AS UNAME,C.ID,C.NAME AS CNAME FROM POSTS AS P, USERS AS U, CATS AS C WHERE P.POSTER=U.ID AND P.CAT=C.ID AND P.ID=".$POSTID.";");
+		$GET_POST = $SQL->query("SELECT P.ID,P.TITLE,P.STEXT,P.FTEXT,P.TIME,P.TAGS,U.USER,U.NAME AS AUTHOR,C.ID,C.NAME AS CNAME FROM POSTS AS P, USERS AS U, CATS AS C WHERE P.AUTHOR=U.ID AND P.CAT=C.ID AND P.ID=".$POSTID.";");
 
 		if( $GET_POST!==FALSE AND $GET_POST->num_rows==1 )
 		{
@@ -20,9 +20,9 @@
 					<div>
 						<p class="post-text"><?php eecho($P['STEXT']); ?></p>
 						<div class="postfooter">
-							<span><strong>تاریخ : </strong><?php echo mds_date("l  j F Y",$P['TIME']); ?></span>
+							<span><strong>تاریخ ارسال : </strong><?php echo mds_date("l  j F Y",$P['TIME']); ?></span>
+							<span><strong>نویسنده : </strong><?php eecho($P['AUTHOR']); ?></span>
 							<span><strong>دسته : </strong><?php eecho($P['CNAME']); ?></span>
-							<span style="display:block"><strong>نویسنده : </strong><?php eecho($P['UNAME']); ?></span>
 						</div>
 					</div>
 				</div>
