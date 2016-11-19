@@ -310,8 +310,8 @@ body{
     display: block;
     color: #FFF;
     background-color: #9c2319;
-    padding: 0px 20px;
-    line-height: 45px;
+    padding: 0px 10px;
+    line-height: 40px;
     border-radius: 10px 10px 0 0;
     margin: 0px;
 }
@@ -428,4 +428,20 @@ p.post-text {
     text-align: left;
     font-family: initial;
     direction: ltr;
+}
+
+.postfooter {
+    /* line-height: 40px; */
+    /* padding: 0px 10px; */
+    border-top: 1px dotted #FFF;
+}
+
+.postsec .postfooter span {
+    display: inline-block;
+    line-height: 35px;
+    padding: 0px 10px;
+}
+
+.postfooter span strong {
+    color: #FFEB3B;
 }
