@@ -3,7 +3,7 @@ A mini blog script for Web Programming course at university.
 Its fully open source and published under GPL3(GNU PUBLIC LICENSE v3)
 Anyone can fork and develop it...
 
-## ---> IMPORTANT WARNING !!!
+## * IMPORTANT WARNING !!!
 **It is not a commercial product, It is not full secure for use in real website or hosting when under develop.
 If you run this in server you will accept any OWN RISK**
 
