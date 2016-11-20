@@ -1,10 +1,10 @@
 <?php
 	session_start();
-	
+
 	require_once('config.php');
 	require_once("PersianCalendar.php");
 	// Connection Variable
-	$SQL = new mysqli($CONF['location'],$CONF['dbuser'],$CONF['dbpass'],$CONF['dbname']);
+	$SQL = new mysqli($CONF['remoteurl'],$CONF['dbuser'],$CONF['dbpass'],$CONF['dbname']);
 
 	if ($SQL->connect_error) {
     die("INTERNAL SERVER ERROR ACCOURED...");
@@ -28,7 +28,7 @@
 	}
 
 	function logedin(){
-		if( ISSET($_SESSION['ID'],$_SESSION['USER'],$_SESSION['EMAIL']) )
+		if( ISSET($_SESSION['ID'],$_SESSION['USER'],$_SESSION['NAME'],$_SESSION['EMAIL'],$_SESSION['WEB']) )
 			return true;
 		return false;
 	}
@@ -57,8 +57,21 @@
 		return false;
 	}
 
-
 	function mkhash($str){
 		return md5(md5($str.'oaiaduspojraj').'oueoijlchsa');
+	}
+
+	/***** Admin Controll Panel functions *****/
+
+	/**
+	*	if is not admin exit script
+	*
+	*/
+	function isadmin(){
+		if( logedin() )
+			if( $_SESSION['GRP']=='10' )
+				echo true;
+		header("Location: ../");
+		die('شما به این ناحیه دسترسی ندارید');
 	}
  ?>

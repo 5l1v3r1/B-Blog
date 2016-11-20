@@ -37,15 +37,6 @@ body{
 	min-width: 700px;
 }
 
-.loading{
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  background-color: rgba(0, 0, 0, 0.0);
-}
-
 .nav{
   position: fixed;
   top: 0px;

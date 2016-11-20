@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}">
+<html dir="rtl" lang="fa">
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="initial-scale=1, width=device-width, height=device-height" />
@@ -9,7 +9,6 @@
 	<script type="text/javascript" src="lib/main.js"></script>
 </head>
 <body>
-	<div class="loading" style="display:none;"></div>
 	<div class="nav">
 		<ul>
 			<a href="index.php"><li>صفحه اصلی</li></a>
@@ -17,7 +16,7 @@
 			<a href="posts.php?N=about"><li>درباره</li></a>
 			<a href="posts.php?N=contact"><li>ارتباط</li></a>
 			<?php if( logedin() ){ ?>
-				<a href="" class="hover"><li class="left">خروج</li></a>
+				<a href="" na onClick="logout();return false;" class="hover"><li class="left">خروج</li></a>
 			<?php } ?>
 		</ul>
 	</div>

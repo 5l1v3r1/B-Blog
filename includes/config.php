@@ -2,12 +2,12 @@
 
 	$CONF = array(
 		// Data base config:
-		'location'		=>	'localhost',	// location of mysql
+		'remoteurl'	=>	'localhost',	// location of mysql
 		'dbuser'		=>	'root',				// mysql user name
 		'dbpass'		=>	'123456789',		// mysql user password
 		'dbname'		=>	'blog',				// mysql database name for script
 		// Site main config:
-		'SITE_TITLE'	=>	'عنوان وبلاگ',
+		'SITE_TITLE'	=>	'سیستم مدیر محتوای وبلاگ',
 	);
 
 
