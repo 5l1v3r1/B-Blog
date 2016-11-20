@@ -70,7 +70,7 @@
 	function isadmin(){
 		if( logedin() )
 			if( $_SESSION['GRP']=='10' )
-				echo true;
+				return true;
 		header("Location: ../");
 		die('شما به این ناحیه دسترسی ندارید');
 	}
