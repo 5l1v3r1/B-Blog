@@ -1,4 +1,6 @@
 <?php
+	session_start();
+	
 	require_once('config.php');
 	require_once("PersianCalendar.php");
 	// Connection Variable
@@ -26,7 +28,7 @@
 	}
 
 	function logedin(){
-		if( ISSET($_SESSION['UID']) )
+		if( ISSET($_SESSION['ID'],$_SESSION['USER'],$_SESSION['EMAIL']) )
 			return true;
 		return false;
 	}

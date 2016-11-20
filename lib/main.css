@@ -73,8 +73,16 @@ body{
   transition: all 0.2s ease-in-out;
 }
 
-.nav li:hover, .nav a.hover li {
-	background-color: #b3281d;
+.nav li.left{
+	float: left;
+}
+
+.nav a.hover li {
+	background-color: #901c12;
+}
+
+.nav li:hover{
+	background-color: #b3281d !important;
 }
 
 

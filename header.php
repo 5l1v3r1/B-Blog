@@ -17,10 +17,7 @@
 			<a href="posts.php?N=about"><li>درباره</li></a>
 			<a href="posts.php?N=contact"><li>ارتباط</li></a>
 			<?php if( logedin() ){ ?>
-				<a href=""><li></li></a>
-			<?php }else{ ?>
-				<a href=""><li></li></a>
-				<a href=""><li></li></a>
+				<a href="" class="hover"><li class="left">خروج</li></a>
 			<?php } ?>
 		</ul>
 	</div>
@@ -33,9 +30,9 @@
 			<?php if( !logedin() ){ ?><div class="logreg">
 				<h3>ورود / عضویت</h3>
 				<div>
-					<input id="user" type="text" value="" placeholder="نام کاربری" />
-					<input id="pass" type="password" value="" placeholder="گذرواژه" />
-					<button id="login">ورود</button>
+					<input id="user" type="text" placeholder="نام کاربری" />
+					<input id="pass" type="password" placeholder="گذرواژه" />
+					<button id="login" onclick="login();">ورود</button>
 					<a href="register.php"><button id="login">عضو نیستم</button></a>
 				</div>
 			</div><?php } ?>

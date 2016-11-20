@@ -52,7 +52,7 @@
 		}
 	}
 
-	if( !isset($_POST['A']) )
+	if( !isset($_POST['N']) )
 		header("Location: index.php");
 
 	echo $R;
