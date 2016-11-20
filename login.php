@@ -43,15 +43,13 @@
 			$R = 2;
 		}
 	}
-	else {
-		if( ISSET($_GET['OUT']) )
-		{
-			session_unset();
-			session_destroy();
-			$R = 1;
-		}
+	elseif( ISSET($_GET['OUT']) ) {
+		session_unset();
+		session_destroy();
+		$R = 1;
+	}else{
+		header("Location: index.php");
 	}
 
-	header("Location: index.php");
 	echo $R;
 ?>
