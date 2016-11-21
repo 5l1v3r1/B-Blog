@@ -41,7 +41,7 @@
 				</div>
 	<?php }
 
-			$GET_CMNT = $SQL->query("SELECT C.ID,C.SENDER,C.NAME,C.WEB,C.TXT,C.TIME,U.ID AS UID,U.NAME AS UNAME,U.WEB AS UWEB FROM COMMENTS AS C, USERS AS U WHERE C.SENDER=U.ID AND C.TYPE=1 AND C.POST='".$POSTID."';");
+			$GET_CMNT = $SQL->query("SELECT C.ID AS CID,C.SENDER,C.NAME,C.WEB,C.TXT,C.TIME,U.ID AS UID,U.NAME AS UNAME,U.WEB AS UWEB FROM COMMENTS AS C, USERS AS U WHERE C.SENDER=U.ID AND C.TYPE=1 AND C.POST='".$POSTID."';");
 
 			if( $GET_CMNT!==FALSE AND $GET_CMNT->num_rows>0 ){	?>
 				<div class="comments">
@@ -52,7 +52,7 @@
 								$CM['NAME'] = $CM['UNAME'];
 								$CM['WEB'] = $CM['UWEB'];
 							} ?>
-						<div class="cmt" id="cmt<?php echo $CM['']; ?>">
+						<div class="cmt" id="cmt<?php echo $CM['CID']; ?>">
 							<div>
 								<span><?php echo mds_date("l  j F Y",$CM['TIME']); ?></span>
 								<?php

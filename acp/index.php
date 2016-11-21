@@ -1,7 +1,6 @@
 <?php
 	require_once('../includes/functions.php');
-
-	isadmin();
+	checkadmin();
 
 	if( !isset($_POST['A']) )
      require_once('header.php');

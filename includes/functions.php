@@ -33,6 +33,13 @@
 		return false;
 	}
 
+	function isadmin(){
+		if( logedin() )
+			if( $_SESSION['GRP']=='10' )
+				return true;
+		return false;
+	}
+
 	function get_text(){
 		global $TEXTS;
 		echo $TEXTS[ rand(0,count($TEXTS)-1) ];
@@ -63,14 +70,14 @@
 
 	/***** Admin Controll Panel functions *****/
 
+
 	/**
 	*	if is not admin exit script
 	*
 	*/
-	function isadmin(){
-		if( logedin() )
-			if( $_SESSION['GRP']=='10' )
-				return true;
+	function checkadmin(){
+		if( isadmin() )
+			return true;
 		header("Location: ../");
 		die('شما به این ناحیه دسترسی ندارید');
 	}

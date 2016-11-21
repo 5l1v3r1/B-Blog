@@ -15,9 +15,8 @@
 			<a href="cats.php"><li>موضوعات</li></a>
 			<a href="posts.php?N=about"><li>درباره</li></a>
 			<a href="posts.php?N=contact"><li>ارتباط</li></a>
-			<?php if( logedin() ){ ?>
-				<a href="" na onClick="logout();return false;" class="hover"><li class="left">خروج</li></a>
-			<?php } ?>
+			<?php if( isadmin() ){ ?><a href="acp/" na target="_blank" class="hover"><li class="left">پنل مدیریت</li></a><?php } ?>
+			<?php if( logedin() ){ ?><a href="" na onClick="logout();return false;"><li class="left">خروج</li></a><?php } ?>
 		</ul>
 	</div>
 	<div class="header"><span><?php echo $CONF['SITE_TITLE']; ?></span></div>
