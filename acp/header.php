@@ -22,10 +22,12 @@
 	<div class="side">
 		<span>مطالب</span>
 		<ul>
-			<a href="posts.php"><li>لیست مطالب</li></a>
-			<a href="posts_new.php"><li>ارسال مطلب</li></a>
-			<a href="posts_wait.php"><li>در انتظار تائید</li></a>
-			<a href="posts_rejected.php"><li>مطالب رد شده</li></a>
+			<a href="posts.php?Q=all"><li>لیست مطالب</li></a>
+			<a href="posts_new.php"><li>ارسال مطلب جدید</li></a>
+			<a href="posts.php?Q=published"><li>مطالب منتشر شده</li></a>
+			<a href="posts.php?Q=wait"><li>در انتظار تائید</li></a>
+			<a href="posts.php?Q=rejected"><li>مطالب رد شده</li></a>
+			<a href="posts_drafts.php"><li>پیشنویس ها</li></a>
 		</ul>
 		<span>موضوعات</span>
 		<ul>
