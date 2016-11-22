@@ -297,7 +297,7 @@ body{
     display: block;
     color: #FFF;
     background-color: #9c2319;
-    padding: 0px 10px;
+    padding: 5px 10px;
     line-height: 40px;
     border-radius: 10px 10px 0 0;
     margin: 0px;
@@ -308,11 +308,12 @@ body{
     background-color: rgba(0,0,0,.5);
     border-radius: 0 0 5px 5px;
     overflow: auto;
+    padding: 5px 10px;
 }
 
 p.post-text {
     margin: 0px;
-    padding: 10px 15px;
+    padding: 10px 0px;
     line-height: 26px;
     font-size: 17px;
     word-spacing: 2px;
@@ -418,16 +419,22 @@ p.post-text {
 }
 
 .postfooter {
-    /* line-height: 40px; */
-    /* padding: 0px 10px; */
     border-top: 1px dotted #FFF;
+    padding: 2.5px 2.5px 0 2.5px;
 }
 
 .postsec .postfooter span {
     display: inline-block;
     line-height: 35px;
-    padding: 0px 10px;
 }
+
+.postsec .postfooter span:after {
+	content: '';
+    display: inline-block;
+    margin: 0px 5px;
+}
+
+
 
 .postfooter span strong {
     color: #FFEB3B;
