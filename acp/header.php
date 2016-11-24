@@ -11,9 +11,9 @@
 <body>
 	<ul class="top-nav">
 		<li>| | |</li>
-		<a href="index.php"><li>صفحه اصلی</li></a>
+		<a href="index.php"><li>داشبورد</li></a>
 		<a href="posts.php"><li>مطالب</li></a>
-		<a href="categories.php"><li>موضوعات</li></a>
+		<a href="categories.php"><li>دسته ها</li></a>
 		<a href="comments.php"><li>دیدگاه ها</li></a>
 		<a href="users.php"><li>کاربران</li></a>
 		<a href="settings.php"><li>تنظیمات</li></a>

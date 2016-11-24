@@ -136,7 +136,7 @@ body{
 .menu > div{
 	border-radius: 5px;
 	background-color: rgba(0,0,0,0.5);
-	padding-bottom: 5px;
+	/* padding-bottom: 5px; */
 	margin-bottom: 10px;
 }
 
@@ -206,14 +206,13 @@ body{
 
 .post > p{
 	margin: 0px;
-	max-height: 120px;
+	max-height: 159px;
 	color: rgba(255,255,255,0.9);
-	line-height: 25px;
+	line-height: 28px;
 	padding: 5px 10px;
 	overflow: hidden;
 	text-align: justify;
-	font-weight: bold;
-	font-size: 16px;
+	font-size: 17px;
 }
 
 .post > div{
@@ -236,7 +235,7 @@ body{
 }
 
 .post:hover{
-	background-color: rgba(0,0,0,0.7);
+	background-color: rgba(0,0,0,0.65);
 }
 
 
@@ -266,6 +265,10 @@ body{
 	line-height: 30px;
 	color: #FFF;
 	padding: 0px 10px;
+}
+
+.menu ul li:last-child {
+	border-radius: 0px 0px 5px 5px;
 }
 
 .menu ul li:before{
