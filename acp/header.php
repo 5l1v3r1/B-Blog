@@ -22,8 +22,8 @@
 	<div class="side">
 		<span>مطالب</span>
 		<ul>
+			<a href="post.php"><li>ارسال مطلب جدید</li></a>
 			<a href="posts.php?Q=all"><li>لیست مطالب</li></a>
-			<a href="posts_new.php"><li>ارسال مطلب جدید</li></a>
 			<a href="posts.php?Q=published"><li>مطالب منتشر شده</li></a>
 			<a href="posts.php?Q=wait"><li>در انتظار تائید</li></a>
 			<a href="posts.php?Q=rejected"><li>مطالب رد شده</li></a>
@@ -31,8 +31,8 @@
 		</ul>
 		<span>موضوعات</span>
 		<ul>
-			<a href="categories.php"><li>لیست موضوعات</li></a>
-			<a href="categories_new.php"><li>موضوع جدید</li></a>
+			<a href="categories.php"><li>لیست دسته ها</li></a>
+			<a href="categories_new.php"><li>افزودن دسته جدید</li></a>
 		</ul>
 		<span>دیدگاه ها</span>
 		<ul>

@@ -18,7 +18,7 @@ a *,a:hover *,a:focus *{
 }
 
 body{
-	background-color: #f3f3f3;
+	background-color: #f1f1f1;
 }
 
 html,body,ul,li {
@@ -58,6 +58,7 @@ ul.top-nav li:hover,ul.top-nav>a.active>li {
     bottom: 0px;
     width: 200px;
     background-color: #31363a;
+    overflow-y: auto;
 }
 
 .side>span {
@@ -90,7 +91,7 @@ ul.top-nav li:hover,ul.top-nav>a.active>li {
 .main {
     margin-right: 200px;
     margin-top: 50px;
-    padding: 10px;
+    padding: 10px 10px 10px 10px;
 }
 
 div.table h3{
@@ -147,4 +148,78 @@ table td span,
 table tr:hover span.hover{
 	display: block;
 	line-height: 25px;
+}
+
+
+div.form > div {margin: 0 14px 20px 14px;}
+
+div.form input,.form textarea {
+    line-height: 40px;
+    padding: 0px 10px;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    margin: 0 -14px;
+}
+
+.form textarea {
+    min-height: 300px;
+    height: auto;
+    resize: vertical;
+    line-height: 30px;
+}
+
+span.code {
+    padding: 3px 10px;
+    background-color: #000;
+    color: #FFF;
+    border-radius: 5px;
+}
+
+.tip {
+    margin: -10px 0 20px 0 !important;
+    background-color: #d6d6d6;
+    line-height: 40px;
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
+select {
+    width: 100%;
+    padding: 0 5px;
+    min-height: 40px;
+    background-color: #FFF;
+    line-height: 30px;
+    font-size: 16px;
+    overflow: auto;
+}
+
+select option{
+	padding: 5px 10px 2px 10px;
+	line-height: 30px;
+}
+
+button {
+    line-height: 40px;
+    border: 0px;
+    padding: 0 10px;
+    font-size: 16px;
+    margin: 0 5px;
+    color: #FFF;
+    background-color: #3d7ab3;
+    cursor: pointer;
+}
+
+button.none {
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid #5f5f5f;
+}
+
+button:hover{
+    background-color: #325e88;
+}
+
+button.none:hover{
+    background-color: #f1f1f1;
 }

@@ -46,7 +46,7 @@
 	}
 
 	// Echo HTML encoded text
-	function eecho($str){
+	function eecho($str=''){
 		echo htmlentities($str);
 	}
 
