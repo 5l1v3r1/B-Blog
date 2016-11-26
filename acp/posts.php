@@ -66,7 +66,7 @@
 							<td>
 								<span>'.$POST['TITLE'].'</span>
 								<span class="hover">
-									<a>ویرایش</a>
+									<a href="post.php?ID='.$POST['PID'].'">ویرایش</a>
 									<a>حذف</a>
 									<a>نمایش</a>
 								</span>
