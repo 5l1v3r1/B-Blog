@@ -93,17 +93,23 @@ ul.top-nav li:hover,ul.top-nav>a.active>li {
     padding: 10px;
 }
 
+div.table h3{
+	line-height: 40px;
+	margin: 0px;
+	padding: 0px 10px;
+	background-color: #394248;
+	color: #FFF;
+}
+
 div.table{
 	background-color: #FFF;
-	padding: 10px;
-	border: 1px solid #c1c1c1;
-	border-radius: 5px;
 }
 
 div.table > span{
+	text-align: center;
+	font-size: 16px;
+	display: block;
 	line-height: 40px;
-	padding: 0px 5px;
-	font-size: 20px;
 }
 
 table {
@@ -126,4 +132,19 @@ table tr th {
 
 table tr:nth-of-type(odd) {
     background-color: #f3f3f3;
+}
+
+table tr:hover:not(:first-child){
+	background-color: #e0e0e0;
+}
+
+
+table td span.hover{
+	display: none;
+}
+
+table td span,
+table tr:hover span.hover{
+	display: block;
+	line-height: 25px;
 }

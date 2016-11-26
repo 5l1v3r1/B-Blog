@@ -444,3 +444,13 @@ p.post-text {
 .postfooter span strong {
     color: #FFEB3B;
 }
+
+
+h3.ntfnd {
+    line-height: 40px;
+    color: #FFF;
+    background-color: #000;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px 5px;
+}

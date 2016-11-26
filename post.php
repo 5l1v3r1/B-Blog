@@ -8,7 +8,7 @@
 	if( isset($_GET['id']) && (int)$_GET['id']>0 )
 	{
 		$POSTID = scape((int)$_GET['id']);
-		$GET_POST = $SQL->query("SELECT P.ID,P.TITLE,P.STEXT,P.FTEXT,P.TIME,P.TAGS,U.USER,U.NAME AS AUTHOR,C.ID,C.NAME AS CNAME FROM POSTS AS P, USERS AS U, CATS AS C WHERE P.AUTHOR=U.ID AND P.CAT=C.ID AND P.ID=".$POSTID.";");
+		$GET_POST = $SQL->query("SELECT P.ID,P.TITLE,P.STEXT,P.FTEXT,P.TIME,P.TAGS,U.USER,U.NAME AS AUTHOR,C.ID,C.NAME AS CNAME FROM POSTS AS P, USERS AS U, CATS AS C WHERE P.AUTHOR=U.ID AND P.CAT=C.ID AND P.TYPE=1 AND P.ID=".$POSTID.";");
 
 		if( $GET_POST!==FALSE AND $GET_POST->num_rows==1 )
 		{
@@ -93,6 +93,10 @@
 				</div>
 			</div>
 		<?php
+		}
+		else
+		{
+			echo '<h3 class="ntfnd">محتوایی برای نمایش پیدا نشد...</h3>';
 		}
 	}
 

@@ -27,7 +27,7 @@
 			<a href="posts.php?Q=published"><li>مطالب منتشر شده</li></a>
 			<a href="posts.php?Q=wait"><li>در انتظار تائید</li></a>
 			<a href="posts.php?Q=rejected"><li>مطالب رد شده</li></a>
-			<a href="posts_drafts.php"><li>پیشنویس ها</li></a>
+			<a href="posts.php?Q=draft"><li>پیش نویس ها</li></a>
 		</ul>
 		<span>موضوعات</span>
 		<ul>
@@ -45,7 +45,7 @@
 		<ul>
 			<a href="users.php"><li>لیست کاربران</li></a>
 			<a href="users_new.php"><li>کاربر جدید</li></a>
-			<a href=""><li>نوسندگان</li></a>
+			<a href=""><li>نویسندگان</li></a>
 		</ul>
 		<span>بیشتر</span>
 		<ul>
