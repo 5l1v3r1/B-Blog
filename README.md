@@ -21,6 +21,17 @@ Anyone can fork and develop it...
 * Manage users
 * & etc...
 
+
+### We Used
+* [**Vazir Font**](https://rastikerdar.github.io/vazir-font/)
+> One of the best persian free font. Designer: Saber Rasti kerdar
+
+* [**jQuery**](http://jquery.com)
+> is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers.
+
+* [**Persian Calendar for PHP**](https://www.codeproject.com/articles/28380/persian-calendar-in-php)
+> is a library to use Jalali Calendar in PHP.
+
 ## Getting Started
 This script written with PHP language in front-end and use CSS, JavaScript and jQuery in back-end.
 

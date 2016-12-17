@@ -1,8 +1,19 @@
 @font-face {
-	font-family: 'byekan';
-	src: url('BYekan.eot?#') format('eot'),
-	url('BYekan.woff') format('woff'),
-	url('BYekan.ttf') format('truetype');
+  font-family: Vazir;
+  src: url('fonts/Vazir.eot');
+  src: url('fonts/Vazir.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Vazir.woff') format('woff'),
+       url('fonts/Vazir.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Vazir;
+  src: url('fonts/Vazir-Bold.eot');
+  src: url('fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Vazir-Bold.woff') format('woff'),
+       url('fonts/Vazir-Bold.ttf') format('truetype');
+  font-weight: bold;
 }
 
 a,a:active, a *,a:active *{
@@ -13,7 +24,7 @@ a,a:active, a *,a:active *{
 	color: inherit;
 }
 
-button{cursor: pointer;font-family: 'Byekan';}
+button{cursor: pointer;font-family: 'Vazir';}
 button:hover{box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.5);}
 
 
@@ -29,7 +40,7 @@ ul {
 }
 
 body{
-	font-family: 'Byekan';
+	font-family: 'Vazir';
 	direction: rtl;
 	margin: 0px 0px 0px 0px;
 	background-color: #000;
@@ -164,7 +175,7 @@ body{
 	border-radius: 5px;
 	border: none;
 	text-align: center;
-	font-family: 'Byekan';
+	font-family: 'Vazir';
 	font-size: 16px;
 }
 
@@ -183,7 +194,7 @@ body{
 	/* border-radius: 5px; */
 	border: none;
 	width: 90%;
-	font-family: 'Byekan';
+	font-family: 'Vazir';
 	font-size: 16px;
 }
 .post {
@@ -388,7 +399,7 @@ p.post-text {
     margin: 0px auto;
     line-height: 20px;
     padding: 10px 2.5%;
-    font-family: Byekan;
+    font-family: Vazir;
     border: none;
 }
 
@@ -401,7 +412,7 @@ p.post-text {
 }
 
 .sendcmt textarea {
-    font-family: 'Byekan';
+    font-family: 'Vazir';
     line-height: 20px;
     resize: none;
     height: 80px;

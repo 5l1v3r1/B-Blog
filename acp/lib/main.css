@@ -1,12 +1,23 @@
 @font-face {
-	font-family: 'byekan';
-	src: url('BYekan.eot?#') format('eot'),
-	url('BYekan.woff') format('woff'),
-	url('BYekan.ttf') format('truetype');
+  font-family: Vazir;
+  src: url('../../lib/fonts/Vazir.eot');
+  src: url('../../lib/fonts/Vazir.eot?#iefix') format('embedded-opentype'),
+       url('../../lib/fonts/Vazir.woff') format('woff'),
+       url('../../lib/fonts/Vazir.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Vazir;
+  src: url('../../lib/fonts/Vazir-Bold.eot');
+  src: url('../../lib/fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../../lib/fonts/Vazir-Bold.woff') format('woff'),
+       url('../../lib/fonts/Vazir-Bold.ttf') format('truetype');
+  font-weight: bold;
 }
 
 *{
-    font-family: Byekan;
+    font-family: Vazir;
     transition: all 0.15s ease-in-out 0s;
 }
 
