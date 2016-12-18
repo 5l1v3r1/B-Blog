@@ -12,6 +12,7 @@
 	*	@return	1	post not exist
 	*	@return	2	title len error
 	*	@return	3	category error
+	*	@return	4	title or text are empty
 	*	@return	200	Data saved
 	*	@return	-1		INTERNAL ERROR
 	*/
@@ -49,15 +50,18 @@
 			$tags = trim($_POST['tags']);
 			$type = ( (int)$_POST['type']==1 ) ? 1 : 3;
 
+			if( strlen($title)>255 )
+				die('2');	// title is long
+
+			if( trim($title)=='' OR trim($_POST['text'])=='' )
+				die('4');	// write title AND text
+
 			if($POSTID>0)
 			{
 				$chkpostid = $SQL->query("SELECT ID FROM POSTS WHERE ID='".scape($POSTID)."'");
 				if( $chkpostid->num_rows!==1 )
 					die('1');
 			}
-
-			if( strlen($title)>255 )
-				die('2');	// title is long
 
 			if( $cat>0 )
 			{

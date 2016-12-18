@@ -73,11 +73,14 @@ function mod_post(type=0)
 				case '3':
 					tip('دسته مورد نظر پیدا نشد.');
 					break;
+				case '4':
+					tip('عنوان و متن نمیتوانند خالی باشند.');
+					break;
 				case '200':
 					tip('اطلاعات با موفقیت ذخیره شد.');
+					redirect('posts.php');
 					break;
 			}
-			redirect('posts.php');
 		});
 }
 
