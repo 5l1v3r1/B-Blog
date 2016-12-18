@@ -63,12 +63,17 @@ ul.top-nav li:hover,ul.top-nav>a.active>li {
     box-shadow: inset 0px 0px 1px 100px rgba(0,0,0,0.5);
 }
 
+ul.top-nav > li:first-child{
+	cursor: pointer;
+	padding-left: 0px;
+}
+
 .side {
     position: fixed;
     top: 50px;
     right: 0px;
     bottom: 0px;
-    width: 200px;
+    width: 220px;
     background-color: #31363a;
     overflow-y: auto;
 }
@@ -101,11 +106,11 @@ ul.top-nav li:hover,ul.top-nav>a.active>li {
 }
 
 .main {
-    padding: 0px 10px 10px 10px;
+    padding: 10px;
     position: fixed;
     top: 50px;
     left: 0px;
-    right: 200px;
+    right: 220px;
     overflow: auto;
     bottom: 0px;
     : 500px

@@ -11,13 +11,15 @@
 </head>
 <body>
 	<ul class="top-nav">
-		<li>| | |</li>
+		<li class="fa-bars"></li>
+		<a href="../" na><li class="fa-home">نمایش سایت</li></a>
 		<a href="index.php"><li class="fa-tachometer">داشبورد</li></a>
 		<a href="posts.php"><li class="fa-book">مطالب</li></a>
 		<a href="categories.php"><li class="fa-list">دسته ها</li></a>
 		<a href="comments.php"><li class="fa-comments">دیدگاه ها</li></a>
 		<a href="users.php"><li class="fa-users">کاربران</li></a>
 		<a href="settings.php"><li class="fa-cog">تنظیمات</li></a>
+		<a href="" na onClick="logout();return false;"><li style="float:left;" class="fa-sign-out">خروج</li></a>
 	</ul>
 
 	<div class="side">

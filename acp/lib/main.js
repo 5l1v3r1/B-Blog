@@ -154,3 +154,10 @@ function tip(text='',cls="red")
 		$('.tips > div').remove();
 	},7000)
 }
+
+
+function logout(){
+	$.get('../login.php?OUT').success(function(){
+		window.location = '../';
+	});
+}

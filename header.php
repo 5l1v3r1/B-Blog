@@ -17,7 +17,7 @@
 			<a href="posts.php?N=about"><li class="fa-info">درباره</li></a>
 			<a href="posts.php?N=contact"><li class="fa-envelope">ارتباط</li></a>
 			<?php if( logedin() ){ ?><a href="" na onClick="logout();return false;"><li class="left fa-sign-out">خروج</li></a><?php } ?>
-			<?php if( isadmin() ){ ?><a href="acp/" na target="_blank" class="hover"><li class="left fa-database">پنل مدیریت</li></a><?php } ?>
+			<?php if( isadmin() ){ ?><a href="acp/" na class="hover"><li class="left fa-database">پنل مدیریت</li></a><?php } ?>
 		</ul>
 	</div>
 	<div class="header"><span><?php echo $CONF['SITE_TITLE']; ?></span></div>
