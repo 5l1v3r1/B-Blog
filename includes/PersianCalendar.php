@@ -6,7 +6,7 @@ modified by : Mohammad Dayyan
 1387/5/15
 */
 
-function mds_date($format, $when="now", $persianNumber = 0)
+function mds_date($format, $when="now", $persianNumber = 1)
 {
 	///chosse your timezone
 	$TZhours=0;
@@ -396,7 +396,7 @@ function mgetdate($timestamp="")
 	);
 }
 
-function div($a,$b) 
+function div($a,$b)
 {
     return (int) ($a / $b);
 }
