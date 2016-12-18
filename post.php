@@ -19,6 +19,7 @@
 					<h3><?php eecho($P['TITLE']); ?></h3>
 					<div>
 						<p class="post-text"><?php eecho($P['STEXT']); ?></p>
+						<p class="post-text"><?php eecho($P['FTEXT']); ?></p>
 						<div class="postfooter">
 							<span><strong>تاریخ ارسال : </strong><?php echo mds_date("l  j F Y",$P['TIME']); ?></span>
 							<span><strong>نویسنده : </strong><?php eecho($P['AUTHOR']); ?></span>

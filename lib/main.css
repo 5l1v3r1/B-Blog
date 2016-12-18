@@ -245,7 +245,8 @@ body{
 	color: yellow;
 }
 
-.post:hover{
+.post:hover,
+.postsec:hover{
 	background-color: rgba(0,0,0,0.65);
 }
 
@@ -256,10 +257,11 @@ body{
 
 
 .footer{
-	background-color: #601616;
-	line-height: 50px;
+	background-color: rgba(0, 0, 0, 0.5);
+	line-height: 60px;
 	color: #FFF;
 	text-align: center;
+	margin: 0 -2vw -10px -2vw;
 }
 
 .footer a{
@@ -437,6 +439,10 @@ p.post-text {
 .postfooter {
     border-top: 1px dotted #FFF;
     padding: 2.5px 2.5px 0 2.5px;
+}
+
+.postsec{
+	border-radius: 15px;
 }
 
 .postsec .postfooter span {
