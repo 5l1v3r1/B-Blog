@@ -85,10 +85,8 @@ function mod_post(type=0)
 }
 
 function dltpost(pid){
-	console.log(pid);
 	$.get('post.php?ID='+pid+'&DLT&A')
 		.success(function(r){
-			console.log(r);
 			if( r=='201' )
 			{
 				tip('مطلب مورد نظر حذف شد.','green');
@@ -97,13 +95,62 @@ function dltpost(pid){
 		});
 }
 
+
+
+
+function mod_cat()
+{
+	var id = $('.form #catid').val();
+	var name = $('.form #name').val();
+
+	$.get("category.php?ID="+id+'&name='+name+'&A')
+		.success(function(r){
+			switch (r) {
+				case '-1':
+					tip('خطای داخلی سمت سرور رخ داده است');
+					break;
+				case '0':
+					tip('اطلاعات ارسال شده ناقص است.');
+					break;
+				case '1':
+					tip('دسته مورد نظر پیدا نشد.');
+					break;
+				case '2':
+					tip('تعداد کاراکتر مجاز برای نام دسته حداقل ۱ و حداکثر ۳۰ میباشد.');
+					break;
+				case '200':
+					tip('اطلاعات با موفقیت ذخیره شد.','green');
+					redirect('categories.php');
+					break;
+			}
+		});
+}
+
+
+function dltcat(catid){
+	$.get('category.php?ID='+catid+'&DLT&A')
+		.success(function(r){
+			if( r=='201' )
+			{
+				tip('دسته مورد نظر حذف شد.','green');
+				redirect('categories.php');
+			}
+		});
+}
+
 function tip(text='',cls="red")
 {
-	$('.tips').append('<div class="'+cls+'" id="'+(++tipid)+'">'+text+'</div>');
+	++tipid;
+
+	$('.tips').append('<div class="'+cls+'" id="tip'+tipid+'">'+text+'</div>');
 	setTimeout(function(){
-		$('.tips > div#'+tipid).addClass('tip');
+		$('.tips > div#tip'+tipid).addClass('tip');
 			setTimeout(function(){
-				$('.tips > div#'+tipid).removeClass('tip');
+				$('.tips > div').removeClass('tip');
 			},5500);
 		},100);
+
+	setTimeout(function(){
+		$('.tips > div').remove();
+	},7000)
 }

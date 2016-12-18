@@ -130,8 +130,9 @@
 			</select>
 		<div></div>
 
-		<button onclick="mod_post(1);">انتشار</button>
-		<button class="none" onclick="mod_post(0);">ذخیره پیشنویس</button>
+		<button class="fa-send" onclick="mod_post(1);">انتشار</button>
+		<button class="fa-thumb-tack none" onclick="mod_post(0);">ذخیره پیشنویس</button>
+		<?php if($POSTID!=0){ ?><button class="fa-trash red" onclick="dltpost(<?php echo $POSTID; ?>);">حذف</button><?php } ?>
 	</div>
 
 

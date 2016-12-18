@@ -33,7 +33,7 @@
 		<span>دسته ها</span>
 		<ul>
 			<a href="categories.php"><li>لیست دسته ها</li></a>
-			<a href="categories_new.php"><li>افزودن دسته جدید</li></a>
+			<a href="category.php"><li>افزودن دسته جدید</li></a>
 		</ul>
 		<span>دیدگاه ها</span>
 		<ul>

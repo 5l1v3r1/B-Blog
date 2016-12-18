@@ -9,7 +9,7 @@
 
 	if( $POSTS!==FALSE )
 	{
-		echo '<div class="table"><h3>'.$TITLE.'</h3>';
+		echo '<div class="table"><h3>لیست دسته ها</h3>';
 
 		if ( $POSTS->num_rows>0 )
 		{
@@ -32,7 +32,7 @@
 							<td>
 							<span class="hover">
 								<a class="fa-eye" href="../index.php?CAT='.$POST['ID'].'" na target="_blank"></a>
-								<a class="fa-pencil" href=""></a>
+								<a class="fa-pencil" href="category.php?ID='.$POST['ID'].'"></a>
 								<a class="fa-trash" onclick="" na></a>
 							</span></td>
 						</tr>';

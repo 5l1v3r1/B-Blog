@@ -78,7 +78,7 @@
 	function checkadmin(){
 		if( isadmin() )
 			return true;
-		header("Location: ../");
-		die('شما به این ناحیه دسترسی ندارید');
+		//header("Location: ../");
+		die('شما به این ناحیه دسترسی ندارید! لطفا وارد حساب کاربری خود شوید.');
 	}
  ?>
