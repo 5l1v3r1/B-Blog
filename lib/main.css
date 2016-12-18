@@ -481,6 +481,8 @@ h1 {
     background-color: #9a2419;
     color: #FFF;
     margin-top: 10px;
+    border-radius: 10px;
+    font-size: 24px;
 }
 
 .adh {
@@ -503,4 +505,9 @@ h1 {
 	font-size: 18px;
 	margin-left: 10px;
 	vertical-align: -2px;
+}
+
+
+.adv , .adh{
+	display: none;
 }
