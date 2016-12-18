@@ -1,3 +1,5 @@
+var tipid = 1;
+
 $(document).ready(function()
 {
 	defaultURL = window.location.href;
@@ -77,4 +79,15 @@ function mod_post(type=0)
 			}
 			redirect('posts.php');
 		});
+}
+
+function tip(text='')
+{
+	$('.tips').append('<div id="'+(++tipid)+'">'+text+'</div>');
+	setTimeout(function(){
+		$('.tips > div#'+tipid).addClass('tip');
+			setTimeout(function(){
+				$('.tips > div#'+tipid).removeClass('tip');
+			},5500);
+		},100);
 }

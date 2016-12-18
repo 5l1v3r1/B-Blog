@@ -240,3 +240,45 @@ button:hover{
 button.none:hover{
     background-color: #f1f1f1;
 }
+
+
+
+.tips div {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    right: 0;
+    padding: 10px 20px 10px 40px;
+    margin: 0 !important;
+    color: #FFF;
+    background-color: #000;
+    text-align: center;
+    transition: all 0.5s linear 0s;
+    line-height: 30px;
+}
+
+.tips .tip{
+	top: 0px !important;
+}
+
+
+/*
+.tips>div>i{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background-color: #F44336;
+	border-radius: 100%;
+	float: left;
+	margin-left: -35px;
+	transform: rotate(45deg);
+}
+
+.tips>div>i:before {
+    content: '+';
+    font-style: normal;
+    line-height: 28px;
+    font-family: monospace;
+    font-weight: normal;
+    font-size: 35px;
+}*/
