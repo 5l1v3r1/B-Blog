@@ -118,7 +118,7 @@ body{
 }
 
 
-.toptext span {
+.toptext strong {
 	line-height: 50px;
 	display: inline-block;
 	background-color: #b3281d;

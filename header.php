@@ -20,7 +20,7 @@
 		</ul>
 	</div>
 	<div class="header"><span><?php echo $CONF['SITE_TITLE']; ?></span></div>
-	<div class="toptext"><span>سخن بزرگان : </span><?php get_text(); ?></div>
+	<div class="toptext"><strong>سخن بزرگان : </strong><span><?php get_text(); ?></span></div>
 
 	<div class="body">
 		<div class="menu">
