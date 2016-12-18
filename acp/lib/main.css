@@ -30,6 +30,7 @@ a *,a:hover *,a:focus *{
 
 body{
 	background-color: #f1f1f1;
+	direction: rtl;
 }
 
 html,body,ul,li {
@@ -100,9 +101,13 @@ ul.top-nav li:hover,ul.top-nav>a.active>li {
 }
 
 .main {
-    margin-right: 200px;
-    margin-top: 50px;
-    padding: 10px 10px 10px 10px;
+    padding: 0px 10px 10px 10px;
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    right: 200px;
+    overflow: auto;
+    bottom: 0px;
 }
 
 div.table h3{
@@ -115,6 +120,7 @@ div.table h3{
 
 div.table{
 	background-color: #FFF;
+	margin: 10px 0;
 }
 
 div.table > span{
@@ -181,7 +187,7 @@ div.form input,.form textarea {
 }
 
 span.code {
-    padding: 3px 10px;
+    padding: 0px 5px;
     background-color: #000;
     color: #FFF;
     border-radius: 5px;
@@ -192,7 +198,7 @@ span.code {
     background-color: #d6d6d6;
     line-height: 40px;
     border-radius: 5px;
-    padding: 0 5px;
+    padding: 0px 10px;
 }
 
 select {

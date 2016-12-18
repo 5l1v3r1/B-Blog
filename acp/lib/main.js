@@ -27,12 +27,54 @@ function linkajax(slct='.main')
 {
 	$(slct+' a:not([na])').click(function(e){
 		e.preventDefault();
-
-		$.post($(this)[0].href,{A:'A'})
-			.success(function(rspns){
-				window.history.pushState({'url':this.url},null,this.url);
-				$('.main').html(rspns);
-				linkajax();
-			})
+		redirect($(this).attr('href'));
 	});
+}
+
+function redirect(url)
+{
+	var loc = window.location.origin+window.location.pathname;
+	var dir = loc.substring(0, loc.lastIndexOf('/'))+'/';
+
+	$.post(url,{A:'A'})
+		.success(function(rspns){
+			window.history.pushState({'url':dir+url},null,dir+url);
+			$('.main').html(rspns);
+			linkajax();
+		});
+}
+
+
+function mod_post(type=0)
+{
+	var id = $('.form #postid').val();
+	var title = $('.form #title').val();
+	var text  = $('.form #text').val();
+	var cat = $('.form #cat').val();
+	var tags = $('.form #tags').val();
+
+	$.post("post.php?ID="+id,{A:'A',title:title,text:text,cat:cat,tags:tags,type:type})
+		.success(function(r){
+			switch (r) {
+				case '-1':
+					tip('خطای داخلی سمت سرور رخ داده است');
+					break;
+				case '0':
+					tip('اطلاعات ارسال شده ناقص است.');
+					break;
+				case '1':
+					tip('مطلب مورد نظر پیدا نشد.');
+					break;
+				case '2':
+					tip('حداکثر تعداد کاراکتر برای عنوان مطلب 255 کاراکتر می‌باشد.');
+					break;
+				case '3':
+					tip('دسته مورد نظر پیدا نشد.');
+					break;
+				case '200':
+					tip('اطلاعات با موفقیت ذخیره شد.');
+					break;
+			}
+			redirect('posts.php');
+		});
 }

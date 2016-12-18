@@ -29,7 +29,7 @@
 			<a href="posts.php?Q=rejected"><li>مطالب رد شده</li></a>
 			<a href="posts.php?Q=draft"><li>پیش نویس ها</li></a>
 		</ul>
-		<span>موضوعات</span>
+		<span>دسته ها</span>
 		<ul>
 			<a href="categories.php"><li>لیست دسته ها</li></a>
 			<a href="categories_new.php"><li>افزودن دسته جدید</li></a>
