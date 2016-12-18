@@ -2,7 +2,7 @@
 	require_once('../includes/functions.php');
 	checkadmin();
 
-	if( !isset($_POST['A']) )
+	if( !isset($_POST['A']) AND !isset($_GET['A']) )
 		require_once('header.php');
 /////////////////////////////////
 	$TYP = Array(
@@ -66,9 +66,9 @@
 							<td>
 								<span>'.$POST['TITLE'].'</span>
 								<span class="hover">
+									<a href="../post.php?id='.$POST['PID'].'" na target="_blank">نمایش</a>
 									<a href="post.php?ID='.$POST['PID'].'">ویرایش</a>
-									<a>حذف</a>
-									<a>نمایش</a>
+									<a onclick="dltpost('.$POST['PID'].');" na>حذف</a>
 								</span>
 							</td>
 							<td>'.$POST['AUTHOR'].'</td>
@@ -92,6 +92,6 @@
 		die("خطایی رخ داده است...");
 	}
 ////////////////////////////////
-	if( !isset($_POST['A']) )
+	if( !isset($_POST['A']) AND !isset($_GET['A']) )
 		require_once('footer.php');
  ?>

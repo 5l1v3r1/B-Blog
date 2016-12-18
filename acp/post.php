@@ -1,12 +1,13 @@
 <?php
 	/**
 	*	Edit/New post
+	*	@param @$_GET['DLT']		Delete post
 	*	@param $_GET['ID']		postid {0=New post / 0<edit post}
 	*	@param $_POST['title']	post title
 	*	@param $_POST['text']	post text
 	*	@param $_POST['tags']	post tags
 	*	@param $_POST['cat']		post categoriy id
-	*	@param $_POST['type']	post type {1=publish / 1!=draft}
+	*	@param $_POST['type']	post type {-1=Delete / 0=draft / 1=publish}
 	*	return values
 	*	@return	0	invalid data
 	*	@return	1	post not exist
@@ -14,13 +15,14 @@
 	*	@return	3	category error
 	*	@return	4	title or text are empty
 	*	@return	200	Data saved
+	*	@return	201	Post Deleted
 	*	@return	-1		INTERNAL ERROR
 	*/
 
 	require_once('../includes/functions.php');
 	checkadmin();
 
-	if( !isset($_POST['A']) )
+	if( !isset($_POST['A']) AND !isset($_GET['A']) )
 		require_once('header.php');
 /////////////////////////////////
 	// Default new post
@@ -40,6 +42,21 @@
 		}
 	}
 
+	// Delete post
+	if( isset($_GET['DLT']) )
+	{
+		if( $POSTID>0 )
+		{
+			$deletepost = $SQL->query("DELETE FROM POSTS WHERE POSTS.ID='".scape($POSTID)."';");
+			if( $deletepost!==FALSE AND $SQL->affected_rows>0 )
+				die('201');	// Successfull Deleted
+			else
+				die('-1');
+		}
+		else
+			die('1');
+	}
+
 	if( isset($_POST['title']) ) // if form submited
 	{
 		if( isset($_POST['title'], $_POST['text'], $_POST['tags'], $_POST['cat'], $_POST['type']) )
@@ -50,18 +67,17 @@
 			$tags = trim($_POST['tags']);
 			$type = ( (int)$_POST['type']==1 ) ? 1 : 3;
 
+			// Post not exist
+			if( (int)$_GET['ID']>0 AND $POSTID==0)
+				die('1');
+
+			// title is long
 			if( strlen($title)>255 )
-				die('2');	// title is long
+				die('2');
 
+			// write title AND text
 			if( trim($title)=='' OR trim($_POST['text'])=='' )
-				die('4');	// write title AND text
-
-			if($POSTID>0)
-			{
-				$chkpostid = $SQL->query("SELECT ID FROM POSTS WHERE ID='".scape($POSTID)."'");
-				if( $chkpostid->num_rows!==1 )
-					die('1');
-			}
+				die('4');
 
 			if( $cat>0 )
 			{
@@ -121,6 +137,6 @@
 
 <?php
 ////////////////////////////////
-	if( !isset($_POST['A']) )
+	if( !isset($_POST['A']) AND !isset($_GET['A']) )
 		require_once('footer.php');
  ?>

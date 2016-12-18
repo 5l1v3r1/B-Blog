@@ -1,7 +1,7 @@
 <?php
 	require_once('includes/functions.php');
 
-  if( !isset($_POST['A']) )
+  if( !isset($_POST['A']) AND !isset($_GET['A']) )
     require_once('header.php');
 
 
@@ -27,6 +27,6 @@
 		}
 	}
 
-  if( !isset($_POST['A']) )
+  if( !isset($_POST['A']) AND !isset($_GET['A']) )
     require_once('footer.php');
 ?>

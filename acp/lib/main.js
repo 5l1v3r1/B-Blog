@@ -7,7 +7,7 @@ $(document).ready(function()
 	linkajax('body');
 
 	$( document ).ajaxError(function(){
-			alert('خطایی رخ داده است. ممکن است با بارگذاری دوباره صفحه مشکل حل شود.');
+			tip('خطایی رخ داده است. ممکن است با بارگذاری دوباره صفحه مشکل حل شود.');
 	});
 
 	window.onpopstate = function(e){
@@ -77,16 +77,29 @@ function mod_post(type=0)
 					tip('عنوان و متن نمیتوانند خالی باشند.');
 					break;
 				case '200':
-					tip('اطلاعات با موفقیت ذخیره شد.');
+					tip('اطلاعات با موفقیت ذخیره شد.','green');
 					redirect('posts.php');
 					break;
 			}
 		});
 }
 
-function tip(text='')
+function dltpost(pid){
+	console.log(pid);
+	$.get('post.php?ID='+pid+'&DLT&A')
+		.success(function(r){
+			console.log(r);
+			if( r=='201' )
+			{
+				tip('مطلب مورد نظر حذف شد.','green');
+				redirect('posts.php');
+			}
+		});
+}
+
+function tip(text='',cls="red")
 {
-	$('.tips').append('<div id="'+(++tipid)+'">'+text+'</div>');
+	$('.tips').append('<div class="'+cls+'" id="'+(++tipid)+'">'+text+'</div>');
 	setTimeout(function(){
 		$('.tips > div#'+tipid).addClass('tip');
 			setTimeout(function(){

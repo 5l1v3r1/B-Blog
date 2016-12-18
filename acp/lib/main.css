@@ -257,6 +257,14 @@ button.none:hover{
     line-height: 30px;
 }
 
+.tips div.green{
+	background-color: #0f7513;
+}
+
+.tips div.red{
+	background-color: #c50a0a;
+}
+
 .tips .tip{
 	top: 0px !important;
 }
