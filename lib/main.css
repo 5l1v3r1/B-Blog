@@ -430,7 +430,7 @@ p.post-text {
 
 .sendcmt #email, .sendcmt #website {
     text-align: left;
-    font-family: initial;
+    /* font-family: initial; */
     direction: ltr;
 }
 
