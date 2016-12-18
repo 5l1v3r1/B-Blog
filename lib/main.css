@@ -141,7 +141,8 @@ body{
 .menu{
 	float: right;
 	width: 29%;
-	margin-top: 10px;
+	margin: 10px 0;
+	min-height: 100vh;
 }
 
 .menu > div{
@@ -247,7 +248,7 @@ body{
 
 .post:hover,
 .postsec:hover{
-	background-color: rgba(0,0,0,0.65);
+	background-color: rgba(0,0,0,0.65) !important;
 }
 
 
@@ -280,7 +281,7 @@ body{
 	padding: 0px 10px;
 }
 
-.menu ul li:last-child {
+.menu ul a:last-child li {
 	border-radius: 0px 0px 5px 5px;
 }
 
@@ -306,9 +307,11 @@ body{
 	padding-right: 0px;
 }
 
-.singlepost > div {
+.singlepost > div:not(.adh) {
     margin-bottom: 30px;
     overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
 }
 
 .singlepost > div > h3 {
@@ -323,7 +326,7 @@ body{
 
 .singlepost > div > div {
     color: #FFF;
-    background-color: rgba(0,0,0,.5);
+    /* background-color: rgba(0,0,0,.5); */
     border-radius: 0 0 5px 5px;
     overflow: auto;
     padding: 5px 10px;
@@ -470,4 +473,26 @@ h3.ntfnd {
     text-align: center;
     border-radius: 5px;
     padding: 10px 5px;
+}
+
+
+h1 {
+    padding: 10px 10px;
+    background-color: #9a2419;
+    color: #FFF;
+    margin-top: 10px;
+}
+
+.adh {
+    text-align: center;
+    margin: 25px 0 15px 0;
+}
+
+.adh img {
+    border: 3px solid #FFF;
+    border-radius: 5px;
+}
+
+.adv img {
+    margin: 10px 5% 5px 5%;
 }

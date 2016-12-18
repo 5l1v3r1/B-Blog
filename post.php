@@ -27,6 +27,11 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="adh">
+					<img src="lib/adh<?php echo rand(1,4); ?>.png" />
+				</div>
+
 			<?php if( $P['TAGS']!=='' )
 			{	?>
 				<div class="tags">
@@ -39,6 +44,10 @@
 								echo '<a href="tags.php?N='.$TAG.'"><li>'.$TAG.'</li></a>';
 							}	?>
 					</ul></div>
+				</div>
+
+				<div class="adh">
+					<img src="lib/adh<?php echo rand(1,4); ?>.png" />
 				</div>
 	<?php }
 
@@ -67,6 +76,10 @@
 						</div>
 						<?php } ?>
 					</div>
+				</div>
+
+				<div class="adh">
+					<img src="lib/adh<?php echo rand(1,4); ?>.png" />
 				</div>
 	<?php } ?>
 
@@ -99,9 +112,12 @@
 		{
 			echo '<h3 class="ntfnd">محتوایی برای نمایش پیدا نشد...</h3>';
 		}
-	}
+	} ?>
 
+	<div class="adh">
+		<img src="lib/adh<?php echo rand(1,4); ?>.png" />
+	</div>
 
-	if( !isset($_POST['A']) AND !isset($_GET['A']) )
+<?php	if( !isset($_POST['A']) AND !isset($_GET['A']) )
 		require_once('footer.php');
 ?>

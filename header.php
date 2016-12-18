@@ -25,16 +25,6 @@
 	<div class="body">
 		<div class="menu">
 
-			<?php if( !logedin() ){ ?><div class="logreg">
-				<h3>ورود / عضویت</h3>
-				<div>
-					<input id="user" type="text" placeholder="نام کاربری" />
-					<input id="pass" type="password" placeholder="گذرواژه" />
-					<button id="login" onclick="login();">ورود</button>
-					<a href="register.php"><button id="login">عضو نیستم</button></a>
-				</div>
-			</div><?php } ?>
-
 			<div class="cats">
 				<h3>موضوعات</h3>
 				<ul>
@@ -43,10 +33,29 @@
 
 						while ($CAT=$CATS->fetch_assoc() )
 						{
-							echo '<a href="cat.php?ID='.$CAT['ID'].'"><li>'.$CAT['NAME'].'</li></a>'.PHP_EOL;
+							echo '<a href="index.php?CAT='.$CAT['ID'].'"><li>'.$CAT['NAME'].'</li></a>'.PHP_EOL;
 						}
 					 ?>
 				</ul>
+			</div>
+
+			<?php if( !logedin() ){ ?>
+			<div class="logreg">
+				<h3>ورود / عضویت</h3>
+				<div>
+					<input id="user" type="text" placeholder="نام کاربری" />
+					<input id="pass" type="password" placeholder="گذرواژه" />
+					<button id="login" onclick="login();">ورود</button>
+					<a href="register.php"><button id="login">عضو نیستم</button></a>
+				</div>
+			</div>	<?php } ?>
+
+			<div class="adv">
+				<h3>تبلیغات</h3>
+				<div>
+					<img src="lib/adv1.gif" />
+					<img src="lib/adv2.gif" />
+				</div>
 			</div>
 		</div>
 

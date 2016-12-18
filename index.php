@@ -1,11 +1,13 @@
 <?php
 	require_once('includes/functions.php');
 
-  if( !isset($_POST['A']) AND !isset($_GET['A']) )
-    require_once('header.php');
+	if( !isset($_POST['A']) AND !isset($_GET['A']) )
+		require_once('header.php');
 
+	if( isset($_GET['CAT']) )
+		$CATEGORY = " AND C.ID='".scape((int)$_GET['CAT'])."'";
 
-	$POSTS = $SQL->query('SELECT P.ID,P.TITLE,P.STEXT,P.TIME,U.NAME AS AUTHOR,C.ID AS CID,C.NAME AS CNAME FROM POSTS AS P, USERS AS U, CATS AS C WHERE P.TYPE=1 AND P.AUTHOR=U.ID AND P.CAT=C.ID ORDER BY P.TIME DESC;');
+	$POSTS = $SQL->query("SELECT P.ID,P.TITLE,P.STEXT,P.TIME,U.NAME AS AUTHOR,C.ID AS CID,C.NAME AS CNAME FROM POSTS AS P, USERS AS U, CATS AS C WHERE P.TYPE=1 AND P.AUTHOR=U.ID AND P.CAT=C.ID".@$CATEGORY." ORDER BY P.TIME DESC;");
 
 	if( $POSTS!==FALSE && $POSTS->num_rows!=0 )
 	{
@@ -23,8 +25,15 @@
 				</div>
 			</div>
 
+			<div class="adh">
+				<img src="lib/adh<?php echo rand(1,4); ?>.png" />
+			</div>
+
 			<?php
 		}
+	}
+	else {
+		echo '<h1>محتوایی برای نمایش پیدا نشد.</h1>';
 	}
 
   if( !isset($_POST['A']) AND !isset($_GET['A']) )
