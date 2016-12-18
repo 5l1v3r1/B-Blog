@@ -52,11 +52,12 @@
 		{
 			echo '<table>
 					<tr>
-						<th width="10%">#</th>
+						<th width="5%">#</th>
 						<th width="30%">عنوان</th>
-						<th width="20%">نویسنده</th>
-						<th width="20%">دسته</th>
-						<th width="20%">تاریخ</th>
+						<th width="15%">نویسنده</th>
+						<th width="15%">دسته</th>
+						<th width="15%">تاریخ</th>
+						<th width="20%">عملیات</th>
 					</tr>';
 
 			while ( $POST = $POSTS->fetch_assoc() )
@@ -65,17 +66,19 @@
 							<td>'.$POST['PID'].'</td>
 							<td>
 								<span>'.$POST['TITLE'].'</span>
-								<span class="hover">
-									<a href="../post.php?id='.$POST['PID'].'" na target="_blank">نمایش</a>
-									<a href="post.php?ID='.$POST['PID'].'">ویرایش</a>
-									<a onclick="dltpost('.$POST['PID'].');" na>حذف</a>
-								</span>
 							</td>
 							<td>'.$POST['AUTHOR'].'</td>
 							<td>'.$POST['CAT'].'</td>
 							<td>
 								<span>'.$TYP[$POST['TYPE']].'</span>
 								<span>'.mds_date("j/F/Y",$POST['TIME']).'</span>
+							</td>
+							<td>
+								<span class="hover">
+									<a class="fa-eye" href="../post.php?id='.$POST['PID'].'" na target="_blank"></a>
+									<a class="fa-pencil" href="post.php?ID='.$POST['PID'].'"></a>
+									<a class="fa-trash" onclick="dltpost('.$POST['PID'].');" na></a>
+								</span>
 							</td>
 						</tr>';
 			}

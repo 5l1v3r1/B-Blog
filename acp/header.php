@@ -5,18 +5,19 @@
 	<meta name="viewport" content="initial-scale=1, width=device-width, height=device-height" />
 	<title><?php echo $CONF['SITE_TITLE']; ?></title>
 	<link rel="stylesheet" type="text/css" href="lib/main.css" />
+	<link rel="stylesheet" type="text/css" href="../lib/font-awesome.css" />
 	<script type="text/javascript" src="lib/jquery.min.js"></script>
 	<script type="text/javascript" src="lib/main.js"></script>
 </head>
 <body>
 	<ul class="top-nav">
 		<li>| | |</li>
-		<a href="index.php"><li>داشبورد</li></a>
-		<a href="posts.php"><li>مطالب</li></a>
-		<a href="categories.php"><li>دسته ها</li></a>
-		<a href="comments.php"><li>دیدگاه ها</li></a>
-		<a href="users.php"><li>کاربران</li></a>
-		<a href="settings.php"><li>تنظیمات</li></a>
+		<a href="index.php"><li class="fa-tachometer">داشبورد</li></a>
+		<a href="posts.php"><li class="fa-book">مطالب</li></a>
+		<a href="categories.php"><li class="fa-list">دسته ها</li></a>
+		<a href="comments.php"><li class="fa-comments">دیدگاه ها</li></a>
+		<a href="users.php"><li class="fa-users">کاربران</li></a>
+		<a href="settings.php"><li class="fa-cog">تنظیمات</li></a>
 	</ul>
 
 	<div class="side">

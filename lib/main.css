@@ -496,3 +496,11 @@ h1 {
 .adv img {
     margin: 10px 5% 5px 5%;
 }
+
+
+.nav li:before{
+	font-family: FontAwesome;
+	font-size: 18px;
+	margin-left: 10px;
+	vertical-align: -2px;
+}
