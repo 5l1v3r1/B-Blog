@@ -224,7 +224,8 @@ body{
 	padding: 5px 10px;
 	overflow: hidden;
 	text-align: justify;
-	font-size: 17px;
+	font-size: 15px;
+	font-weight: bold;
 }
 
 .post > div{

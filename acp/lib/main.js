@@ -140,18 +140,18 @@ function dltcat(catid){
 
 function tip(text='',cls="red")
 {
-	++tipid;
+	var t = ++tipid;
 
-	$('.tips').append('<div class="'+cls+'" id="tip'+tipid+'">'+text+'</div>');
+	$('.tips').append('<div class="'+cls+'" id="tip'+t+'">'+text+'</div>');
 	setTimeout(function(){
-		$('.tips > div#tip'+tipid).addClass('tip');
+		$('.tips > div#tip'+t).addClass('tip');
 			setTimeout(function(){
-				$('.tips > div').removeClass('tip');
+				$('.tips > div#tip'+t).removeClass('tip');
 			},5500);
 		},100);
 
 	setTimeout(function(){
-		$('.tips > div').remove();
+		$('.tips > div#tip'+t).remove();
 	},7000)
 }
 
