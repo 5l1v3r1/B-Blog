@@ -50,14 +50,7 @@
 					<a href="register.php"><button id="login">عضو نیستم</button></a>
 				</div>
 			</div>	<?php } ?>
-
-			<div class="adv">
-				<h3>تبلیغات</h3>
-				<div>
-					<img src="lib/adv1.gif" />
-					<img src="lib/adv2.gif" />
-				</div>
-			</div>
+			
 		</div>
 
 		<div class="main">

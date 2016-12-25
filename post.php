@@ -8,7 +8,7 @@
 	if( isset($_GET['id']) && (int)$_GET['id']>0 )
 	{
 		$POSTID = scape((int)$_GET['id']);
-		$GET_POST = $SQL->query("SELECT P.ID,P.TITLE,P.STEXT,P.FTEXT,P.TIME,P.TAGS,U.USER,U.NAME AS AUTHOR,C.ID,C.NAME AS CNAME FROM POSTS AS P, USERS AS U, CATS AS C WHERE P.AUTHOR=U.ID AND P.CAT=C.ID AND P.TYPE=1 AND P.ID=".$POSTID.";");
+		$GET_POST = $SQL->query("SELECT P.ID AS PID,P.TITLE,P.STEXT,P.FTEXT,P.TIME,P.TAGS,U.USER,U.NAME AS AUTHOR,C.ID,C.NAME AS CNAME FROM POSTS AS P, USERS AS U, CATS AS C WHERE P.AUTHOR=U.ID AND P.CAT=C.ID AND P.TYPE=1 AND P.ID=".$POSTID.";");
 
 		if( $GET_POST!==FALSE AND $GET_POST->num_rows==1 )
 		{
@@ -28,10 +28,6 @@
 					</div>
 				</div>
 
-				<div class="adh">
-					<img src="lib/adh<?php echo rand(1,4); ?>.png" />
-				</div>
-
 			<?php if( $P['TAGS']!=='' )
 			{	?>
 				<div class="tags">
@@ -44,10 +40,6 @@
 								echo '<a href="tags.php?N='.$TAG.'"><li>'.$TAG.'</li></a>';
 							}	?>
 					</ul></div>
-				</div>
-
-				<div class="adh">
-					<img src="lib/adh<?php echo rand(1,4); ?>.png" />
 				</div>
 	<?php }
 
@@ -68,7 +60,7 @@
 								<?php
 									$cmtname = '<strong>'.htmlentities($CM['NAME']).'</strong>';
 									if( !empty($CM['WEB']) )
-										$cmtname = '<a href="'.$CM['WEB'].'" target="_blank" rel="nofollow">'.$cmtname.'</a>';
+										$cmtname = '<a href="'.$CM['WEB'].'" na target="_blank" rel="nofollow">'.$cmtname.'</a>';
 									echo $cmtname;
 								?>
 							</div>
@@ -77,32 +69,28 @@
 						<?php } ?>
 					</div>
 				</div>
-
-				<div class="adh">
-					<img src="lib/adh<?php echo rand(1,4); ?>.png" />
-				</div>
 	<?php } ?>
 
 				<div class="sendcmt">
 					<h3>ارسال دیدگاه</h3>
 					<div>
-						<div>
+						<div<?php echo (logedin())?' style="display:none"':''; ?>>
 							<label>نام :</label>
 							<input id="name" type="text" placeholder="نام شما" value="" />
 						</div>
-						<div>
+						<div<?php echo (logedin())?' style="display:none"':''; ?>>
 							<label>ایمیل :</label>
 							<input id="email" type="text" placeholder="mail@gmail.com" value="" />
 						</div>
-						<div>
+						<div<?php echo (logedin())?' style="display:none"':''; ?>>
 							<label>آدرس وبسایت :</label>
-							<input id="website" type="text" placeholder="address.com" value="" />
+							<input id="website" type="text" placeholder="http://address.com" value="" />
 						</div>
 						<div>
 							<label>متن دیدگاه :</label>
 							<textarea id="comment_text" placeholder="دیدگاه تان را بنویسید..."></textarea>
 						</div>
-						<div><button>ارسال دیدگاه</button></div>
+						<div><button onclick="sendcmt(<?php echo $P['PID']; ?>);">ارسال دیدگاه</button></div>
 					</div>
 				</div>
 			</div>
@@ -113,10 +101,6 @@
 			echo '<h3 class="ntfnd">محتوایی برای نمایش پیدا نشد...</h3>';
 		}
 	} ?>
-
-	<div class="adh">
-		<img src="lib/adh<?php echo rand(1,4); ?>.png" />
-	</div>
 
 <?php	if( !isset($_POST['A']) AND !isset($_GET['A']) )
 		require_once('footer.php');

@@ -37,10 +37,6 @@
 				</div>
 			</div>
 
-			<div class="adh">
-				<img src="lib/adh<?php echo rand(1,4); ?>.png" />
-			</div>
-
 			<?php
 		}
 	}

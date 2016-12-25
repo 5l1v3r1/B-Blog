@@ -4,8 +4,8 @@
 		// Data base config:
 		'remoteurl'	=>	'localhost',	// location of mysql
 		'dbuser'		=>	'root',				// mysql user name
-		'dbpass'		=>	'123456789',		// mysql user password
-		'dbname'		=>	'blog',				// mysql database name for script
+		'dbpass'		=>	'',		// mysql user password
+		'dbname'		=>	'bblog',				// mysql database name for script
 		// Site main config:
 		'SITE_TITLE'	=>	'سیستم مدیر محتوای وبلاگ',
 	);
