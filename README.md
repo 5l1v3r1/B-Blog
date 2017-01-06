@@ -1,25 +1,25 @@
-## * IMPORTANT WARNING !!!
-**It is not a commercial product, It is not full secure for use in real website or hosting when under develop.**
+## :warning: IMPORTANT WARNING !!!
+This is not a commercial product, its not secure enough to use in real website or server when under developing
 
-**If you run this in server you will accept any OWN RISK**
+If you run this on server, you will accept any **OWN RISK**
 
 
 
 # B-Blog
-A mini blog script for Web Programming course at university.
+A simple blog script, for university final associate course project degree.
 
-Its fully open source and published under GPL3(GNU PUBLIC LICENSE v3)
+It is completely open source and published under GPL3(GNU PUBLIC LICENSE v3)
 
 Anyone can fork and develop it...
 
 
 ### Features
-* Full AJAX
-* Tags
-* Posting
-* Commenting
-* Categories
-* Manage users
+* :ghost:	Full AJAX
+* :hash: Tags
+* :pencil: Posting
+* :speech_balloon: Commenting
+* :books: Categories
+* :mag: Manage users
 * & etc...
 
 
@@ -42,18 +42,18 @@ Anyone can fork and develop it...
 ## Getting Started
 This script
 
- 	* written with PHP language in back-end and use CSS, JavaScript and jQuery in front-end.
+* written with PHP language in back-end and also CSS, JavaScript and jQuery in front-end.
 
-	* is full Ajax and do not reload pages while exchange data with server, Data exchange with server in background.
+* is full Ajax and do not reload pages while exchange data with server, Data exchange with server, run in background.
 
-	* inclues ACP(Admin control panel) in order to manage
+* includes ACP(Admin control panel) in order to manage
 
 
 
 ### Requirements
 ```
 * Apache
-* PHP5.6<=
+* PHP5.6 <=
 ```
 
 ### Installation:
