@@ -253,6 +253,9 @@ body{
 	background-color: rgba(0,0,0,0.65) !important;
 }
 
+.post:hover a h3{
+
+}
 
 
 
@@ -280,7 +283,7 @@ body{
 	display: block;
 	line-height: 30px;
 	color: #FFF;
-	padding: 0px 10px;
+	padding: 0 8px 0 5px;
 }
 
 .menu ul a:last-child li {
@@ -288,25 +291,42 @@ body{
 }
 
 .menu ul li:before{
-	content: "";
+	content: '';
 	display: inline-block;
-	width: 0px;
+	width: 10px;
 	height: 10px;
-	vertical-align: -2px;
-	background-color: #FFF;
+	border: 2px solid #FFF;
+	vertical-align: -3px;
 	border-radius: 100%;
-	margin: 0px 0px;
+	margin: 0  0 0 10px;
+	font-size: 13px;
 	transition: all 0.25s ease-in-out 0s;
 }
 
-.menu ul li:hover:before{
-	width: 10px;
-	margin: 0px 5px;
+.menu ul li:after{
+	content: '';
+	display: inline-block;
+	width: 0px;
+	height: 0px;
+	background-color: #FFF;
+	border-radius: 100%;
+	float: right;
+	position: relative;
+	right: 8px;
+	top: 15px;
+	transition: all 0.25s ease-in-out 0s;
+}
+
+.menu ul li:hover:after{
+	width: 12px;
+	height: 12px;
+	margin-right: -12px;
+	top: 9px;
+	right: 13px;
 }
 
 .menu ul li:hover {
 	background-color: rgba(255,152,0,.7);
-	padding-right: 0px;
 }
 
 .singlepost > div:not(.adh) {
@@ -471,10 +491,11 @@ p.post-text {
 h3.ntfnd {
     line-height: 40px;
     color: #FFF;
-    background-color: #000;
+    background-color: #9c2319;
     text-align: center;
     border-radius: 5px;
     padding: 10px 5px;
+    margin-top: 10px;
 }
 
 

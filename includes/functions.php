@@ -78,7 +78,13 @@
 	function checkadmin(){
 		if( isadmin() )
 			return true;
-		//header("Location: ../");
-		die('شما به این ناحیه دسترسی ندارید! لطفا وارد حساب کاربری خود شوید.');
+		else{
+			if( isset($_POST['A']) OR isset($_GET['A']) )
+				die('403');
+			else{
+				header("Location: login.php");
+				exit();
+			}
+		}
 	}
  ?>

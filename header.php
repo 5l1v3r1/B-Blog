@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="lib/main.css" />
 	<link rel="stylesheet" type="text/css" href="lib/font-awesome.css" />
 	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="lib/main.js"></script>
 </head>
 <body>
@@ -14,8 +15,8 @@
 		<ul>
 			<a href="index.php"><li class="fa-home">صفحه اصلی</li></a>
 			<a href="cats.php"><li class="fa-list">دسته ها</li></a>
-			<a href="posts.php?N=about"><li class="fa-info">درباره</li></a>
-			<a href="posts.php?N=contact"><li class="fa-envelope">ارتباط</li></a>
+			<a href="post.php?p=about"><li class="fa-info">درباره</li></a>
+			<a href="post.php?p=contact"><li class="fa-envelope">ارتباط</li></a>
 			<?php if( logedin() ){ ?><a href="" na onClick="logout();return false;"><li class="left fa-sign-out">خروج</li></a><?php } ?>
 			<?php if( isadmin() ){ ?><a href="acp/" na class="hover"><li class="left fa-database">پنل مدیریت</li></a><?php } ?>
 		</ul>
@@ -50,7 +51,7 @@
 					<a href="register.php"><button id="login">عضو نیستم</button></a>
 				</div>
 			</div>	<?php } ?>
-			
+
 		</div>
 
 		<div class="main">
