@@ -4,10 +4,10 @@
 	if( !isset($_POST['A']) AND !isset($_GET['A']) )
 		require_once('header.php');
 
-	if( isset($_GET['CAT']) )
+	if( isset($_GET['cat']) )
 	{
-		$CATEGORY = " AND C.ID='".scape((int)$_GET['CAT'])."'";
-		$CATNAME = $SQL->query("SELECT NAME FROM CATS WHERE ID='".scape((int)$_GET['CAT'])."';");
+		$CATEGORY = " AND C.ID='".scape((int)$_GET['cat'])."' ";
+		$CATNAME = $SQL->query("SELECT NAME FROM CATS WHERE ID='".scape((int)$_GET['cat'])."';");
 		if( $CATNAME!==FALSE && $CATNAME->num_rows!=0 )
 		{
 			$CATNAME = $CATNAME->fetch_assoc();
@@ -17,7 +17,18 @@
 		}
 	}
 
-	$POSTS = $SQL->query("SELECT P.ID,P.TITLE,P.STEXT,P.TIME,U.NAME AS AUTHOR,C.ID AS CID,C.NAME AS CNAME FROM POSTS AS P, USERS AS U, CATS AS C WHERE P.TYPE=1 AND P.AUTHOR=U.ID AND P.CAT=C.ID".@$CATEGORY." ORDER BY P.TIME DESC;");
+	if( isset($_GET['tag']) )
+	{
+		echo '<h1>برچسب : ';
+		eecho($_GET['tag']);
+		echo '</h1>';
+	}
+
+	// if search Tags...
+	if( isset($_GET['tag']) AND !empty($_GET['tag']) )
+		$TAG = " AND TAGS like '%".scape($_GET['tag'])."%' ";
+
+	$POSTS = $SQL->query("SELECT P.ID,P.TITLE,P.STEXT,P.TIME,U.ID AS UID,U.NAME AS AUTHOR,C.ID AS CID,C.NAME AS CNAME FROM POSTS AS P, USERS AS U, CATS AS C WHERE P.TYPE=1 AND P.AUTHOR=U.ID AND P.CAT=C.ID".@$CATEGORY.@$TAG." ORDER BY P.TIME DESC;");
 
 	if( $POSTS!==FALSE && $POSTS->num_rows!=0 )
 	{
@@ -28,12 +39,13 @@
 			?>
 
 			<div class="post">
-				<a href="post.php?id=<?php echo $POST['ID']; ?>"><h3><?php eecho($POST['TITLE']); ?></h3></a>
+				<a href="post?id=<?php echo $POST['ID']; ?>"><h3><?php eecho($POST['TITLE']); ?></h3></a>
 				<p><?php eecho($POST['STEXT']); ?></p>
 				<div class="postfooter">
-					<span><strong>تاریخ ارسال : </strong><?php echo mds_date("l  j F Y",$POST['TIME']); ?></span>
-					<span><strong>نویسنده : </strong><?php eecho($POST['AUTHOR']); ?></span>
-					<span><strong>دسته : </strong><?php eecho($POST['CNAME']); ?></span>
+					<span class="fa-calendar"><strong>تاریخ ارسال : </strong><?php echo mds_date("l  j F Y",$POST['TIME']); ?></span>
+					<span class="fa-user"><strong>نویسنده : </strong><?php eecho($POST['AUTHOR']); ?></span>
+					<span class="fa-list"><strong>دسته : </strong><a href="?cat=<?php echo $POST['CID']; ?>"><?php eecho($POST['CNAME']); ?></a></span>
+					<?php if(isadmin()){ echo '<a na href="acp/post?ID='.$POST['ID'].'"><span class="fa-pencil">ویرایش مطلب</span></a>'; } ?>
 				</div>
 			</div>
 

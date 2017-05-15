@@ -15,11 +15,7 @@
 		<li class="fa-bars"></li>
 		<a href="../" na><li class="fa-home">نمایش سایت</li></a>
 		<a href="index.php"><li class="fa-tachometer">داشبورد</li></a>
-		<!-- <a href="posts.php"><li class="fa-book">مطالب</li></a>
-		<a href="categories.php"><li class="fa-list">دسته ها</li></a>
-		<a href="comments.php"><li class="fa-comments">دیدگاه ها</li></a>
-		<a href="users.php"><li class="fa-users">کاربران</li></a>
-		<a href="settings.php"><li class="fa-cog">تنظیمات</li></a> -->
+		<a href="settings.php"><li class="fa-cog">تنظیمات</li></a>
 		<a href="" na onClick="logout();return false;"><li style="float:left;" class="fa-sign-out">خروج</li></a>
 	</ul>
 
@@ -40,22 +36,20 @@
 		</ul>
 		<span class="fa-comments">دیدگاه ها</span>
 		<ul>
-			<a href="comments.php"><li>لیست کامل</li></a>
-			<a href="comments_accepted.php"><li>تائید شده</li></a>
-			<a href="comments_wait.php"><li>در انتظار تائید</li></a>
-			<a href="comments_rejected.php"><li>دیدگاه های رد شده</li></a>
+			<a href="comments.php"><li>همه دیدگاه ها</li></a>
+			<a href="comments.php?Q=accepted"><li>تائید شده</li></a>
+			<a href="comments.php?Q=wait"><li>در انتظار تائید</li></a>
+			<a href="comments.php?Q=rejected"><li>دیدگاه های رد شده</li></a>
 		</ul>
 		<span class="fa-users">کاربران</span>
 		<ul>
 			<a href="users.php"><li>لیست کاربران</li></a>
-			<a href="users_new.php"><li>کاربر جدید</li></a>
-			<a href=""><li>نویسندگان</li></a>
+			<a href="user.php"><li>کاربر جدید</li></a>
 		</ul>
 		<span class="fa-cog">بیشتر</span>
 		<ul>
-			<a href=""><li>برچسب ها</li></a>
+			<a href="tags.php"><li>برچسب ها</li></a>
 		</ul>
 	</div>
-
 
 	<div class="main">

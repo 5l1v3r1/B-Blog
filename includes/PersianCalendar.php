@@ -52,14 +52,14 @@ function mds_date($format, $when="now", $persianNumber = 1)
 
 			case "A":
 				$result1=date("a",$need);
-				if($result1=="pm") $result.= "&#1576;&#1593;&#1583;&#1575;&#1586;&#1592;&#1607;&#1585;";
-				else $result.="&#1602;&#1576;&#1604;&#8207;&#1575;&#1586;&#1592;&#1607;&#1585;";
+				if($result1=="pm") $result.= "بعد از ظهر";
+				else $result.="قبل از ظهر";
 				break;
 
 			case "a":
 				$result1=date("a",$need);
-				if($result1=="pm") $result.= "&#1576;&#46;&#1592;";
-				else $result.="&#1602;&#46;&#1592;";
+				if($result1=="pm") $result.= "ب.ظ";
+				else $result.="ق.ظ";
 				break;
 			case "d":
 				if($Dday<10)$result1="0".$Dday;
@@ -69,14 +69,29 @@ function mds_date($format, $when="now", $persianNumber = 1)
 				break;
 			case "D":
 				$result1=date("D",$need);
-				if($result1=="Thu") $result1="&#1662;";
-				else if($result1=="Sat") $result1="&#1588;";
-				else if($result1=="Sun") $result1="&#1609;";
-				else if($result1=="Mon") $result1="&#1583;";
-				else if($result1=="Tue") $result1="&#1587;";
-				else if($result1=="Wed") $result1="&#1670;";
-				else if($result1=="Thu") $result1="&#1662;";
-				else if($result1=="Fri") $result1="&#1580;";
+				switch ($result1) {
+					case 'Sat':
+						$result1="ش";
+						break;
+					case 'Sun':
+						$result1="ى";
+						break;
+					case 'Mon':
+						$result1="د";
+						break;
+					case 'Tue':
+						$result1="س";
+						break;
+					case 'Wed':
+						$result1="چ";
+						break;
+					case 'Thu':
+						$result1="پ";
+						break;
+					case 'Fri':
+						$result1="ج";
+						break;
+				}
 				$result.=$result1;
 				break;
 			case"F":
@@ -114,13 +129,29 @@ function mds_date($format, $when="now", $persianNumber = 1)
 				break;
 			case "l":
 				$result1=date("l",$need);
-				if($result1=="Saturday") $result1="&#1588;&#1606;&#1576;&#1607;";
-				else if($result1=="Sunday") $result1="&#1610;&#1603;&#1588;&#1606;&#1576;&#1607;";
-				else if($result1=="Monday") $result1="&#1583;&#1608;&#1588;&#1606;&#1576;&#1607;";
-				else if($result1=="Tuesday") $result1="&#1587;&#1607;&#32;&#1588;&#1606;&#1576;&#1607;";
-				else if($result1=="Wednesday") $result1="&#1670;&#1607;&#1575;&#1585;&#1588;&#1606;&#1576;&#1607;";
-				else if($result1=="Thursday") $result1="&#1662;&#1606;&#1580;&#1588;&#1606;&#1576;&#1607;";
-				else if($result1=="Friday") $result1="&#1580;&#1605;&#1593;&#1607;";
+				switch ($result1) {
+					case 'Saturday':
+						$result1="شنبه";
+						break;
+					case 'Sunday':
+						$result1="يكشنبه";
+						break;
+					case 'Monday':
+						$result1="دوشنبه";
+						break;
+					case 'Tuesday':
+						$result1="سه شنبه";
+						break;
+					case 'Wednesday':
+						$result1="چهارشنبه";
+						break;
+					case 'Thursday':
+						$result1="پنجشنبه";
+						break;
+					case 'Friday':
+						$result1="جمعه";
+						break;
+				}
 				$result.=$result1;
 				break;
 			case "m":
@@ -143,7 +174,7 @@ function mds_date($format, $when="now", $persianNumber = 1)
 				else $result.=$result1;
 				break;
 			case "S":
-				$result.="&#1575;&#1605;";
+				$result.="ام";
 				break;
 			case "t":
 				$result.=lastday ($month,$day,$year);
@@ -259,92 +290,102 @@ function days_of_year($Dmonth, $Dday, $Dyear)
 //translate number of month to name of month
 function monthname($month)
 {
-
-    if($month=="01") return "&#1601;&#1585;&#1608;&#1585;&#1583;&#1610;&#1606;";
-
-    if($month=="02") return "&#1575;&#1585;&#1583;&#1610;&#1576;&#1607;&#1588;&#1578;";
-
-    if($month=="03") return "&#1582;&#1585;&#1583;&#1575;&#1583;";
-
-    if($month=="04") return  "&#1578;&#1610;&#1585;";
-
-    if($month=="05") return "&#1605;&#1585;&#1583;&#1575;&#1583;";
-
-    if($month=="06") return "&#1588;&#1607;&#1585;&#1610;&#1608;&#1585;";
-
-    if($month=="07") return "&#1605;&#1607;&#1585;";
-
-    if($month=="08") return "&#1570;&#1576;&#1575;&#1606;";
-
-    if($month=="09") return "&#1570;&#1584;&#1585;";
-
-    if($month=="10") return "&#1583;&#1610;";
-
-    if($month=="11") return "&#1576;&#1607;&#1605;&#1606;";
-
-    if($month=="12") return "&#1575;&#1587;&#1601;&#1606;&#1583;";
+	switch ($month) {
+		case '01':
+			return 'فروردین';
+			break;
+		case '02':
+			return 'اردیبهشت';
+			break;
+		case '03':
+			return 'خرداد';
+			break;
+		case '04':
+			return 'تیر';
+			break;
+		case '05':
+			return 'مرداد';
+			break;
+		case '06':
+			return 'شهریور';
+			break;
+		case '07':
+			return 'مهر';
+			break;
+		case '08':
+			return 'آبان';
+			break;
+		case '09':
+			return 'آذر';
+			break;
+		case '10':
+			return 'دی';
+			break;
+		case '11':
+			return 'بهمن';
+			break;
+		case '12':
+			return 'اسفند';
+			break;
+	}
 }
 
 function short_monthname($month)
 {
-
-    if($month=="01") return "&#1601;&#1585;&#1608;";
-
-    if($month=="02") return "&#1575;&#1585;&#1583;";
-
-    if($month=="03") return "&#1582;&#1585;&#1583;";
-
-    if($month=="04") return  "&#1578;&#1610;&#1585;";
-
-    if($month=="05") return "&#1605;&#1585;&#1583;";
-
-    if($month=="06") return "&#1588;&#1607;&#1585;";
-
-    if($month=="07") return "&#1605;&#1607;&#1585;";
-
-    if($month=="08") return "&#1570;&#1576;&#1575;";
-
-    if($month=="09") return "&#1570;&#1584;&#1585;";
-
-    if($month=="10") return "&#1583;&#1610;";
-
-    if($month=="11") return "&#1576;&#1607;&#1605;";
-
-    if($month=="12") return "&#1575;&#1587;&#1601; ";
+	switch ($month) {
+		case '01':
+			return 'فرو';
+			break;
+		case '02':
+			return 'ارد';
+			break;
+		case '03':
+			return 'خرد';
+			break;
+		case '04':
+			return 'تير';
+			break;
+		case '05':
+			return 'مرد';
+			break;
+		case '06':
+			return 'شهر';
+			break;
+		case '07':
+			return 'مهر';
+			break;
+		case '08':
+			return 'آبا';
+			break;
+		case '09':
+			return 'آذر';
+			break;
+		case '10':
+			return 'دی';
+			break;
+		case '11':
+			return 'بهم';
+			break;
+		case '12':
+			return 'اسف';
+			break;
+	}
 }
 
 //converts the numbers into the persian's number
-function Convertnumber2farsi($srting)
+function Convertnumber2farsi($string)
 {
-	$num0="&#1776;";
-	$num1="&#1777;";
-	$num2="&#1778;";
-	$num3="&#1779;";
-	$num4="&#1780;";
-	$num5="&#1781;";
-	$num6="&#1782;";
-	$num7="&#1783;";
-	$num8="&#1784;";
-	$num9="&#1785;";
-
+	$num = array('۰','۱','۲','۳','۴','۵','۶','۷','۸','۹');
 	$stringtemp="";
-	$len=strlen($srting);
+	$len=strlen($string);
 	for($sub=0;$sub<$len;$sub++)
 	{
-		 if(substr($srting,$sub,1)=="0")$stringtemp.=$num0;
-		 elseif(substr($srting,$sub,1)=="1")$stringtemp.=$num1;
-		 elseif(substr($srting,$sub,1)=="2")$stringtemp.=$num2;
-		 elseif(substr($srting,$sub,1)=="3")$stringtemp.=$num3;
-		 elseif(substr($srting,$sub,1)=="4")$stringtemp.=$num4;
-		 elseif(substr($srting,$sub,1)=="5")$stringtemp.=$num5;
-		 elseif(substr($srting,$sub,1)=="6")$stringtemp.=$num6;
-		 elseif(substr($srting,$sub,1)=="7")$stringtemp.=$num7;
-		 elseif(substr($srting,$sub,1)=="8")$stringtemp.=$num8;
-		 elseif(substr($srting,$sub,1)=="9")$stringtemp.=$num9;
-		 else $stringtemp.=substr($srting,$sub,1);
+		if( substr($string,$sub,1)>=0 AND substr($string,$sub,1)<=9 )
+			$stringtemp.= $num[substr($string,$sub,1)];
+		else
+			$stringtemp.= substr($string,$sub,1);
 	}
-return   $stringtemp;
-
+	return $stringtemp;
 }///end conver to number in persian
 
 function is_kabise($year)
@@ -359,16 +400,14 @@ function mcheckdate($month,$day,$year)
 	$m_days_in_month = array(31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29);
 	if($month<=12 && $month>0)
 	{
-		if($m_days_in_month[$month-1]>=$day && 	$day>0)
+		if($m_days_in_month[$month-1]>=$day && $day>0)
 			return 1;
 		if(is_kabise($year))
 			echo "Asdsd";
 		if(is_kabise($year) && $m_days_in_month[$month-1]==31)
 			return 1;
 	}
-
 	return 0;
-
 }
 
 function mtime()

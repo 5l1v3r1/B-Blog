@@ -33,7 +33,7 @@
 							<span class="hover">
 								<a class="fa-eye" href="../index.php?CAT='.$POST['ID'].'" na target="_blank"></a>
 								<a class="fa-pencil" href="category.php?ID='.$POST['ID'].'"></a>
-								<a class="fa-trash" onclick="" na></a>
+								<a class="fa-trash" onclick="dltcat('.$POST['ID'].');" na></a>
 							</span></td>
 						</tr>';
 			}

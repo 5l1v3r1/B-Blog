@@ -19,7 +19,7 @@
 	require_once('includes/functions.php');
 
 	if( !isset($_POST['A']) AND !isset($_GET['A']) )
-		header("Location: index.php");
+		header("Location: ./");
 
 	if( isset($_POST['PID'],$_POST['NAME'],$_POST['EMAIL'],$_POST['WEB'],$_POST['CMT']) )
 	{
@@ -47,19 +47,19 @@
 		}
 		else
 		{
-			if( !strlenchk($_POST['NAME'],3,50) )
-				die('2');
-
-			if( !filter_var($_POST['EMAIL'], FILTER_VALIDATE_EMAIL) )
-				die('3');
-
-			if( $_POST['WEB']!='' AND !preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$_POST['WEB']) )
-				die('4');
-
 			$UID = 0;
 			$UNAME = $_POST['NAME'];
 			$UMAIL = $_POST['EMAIL'];
 			$UWEB =	$_POST['WEB'];
+
+			if( !strlenchk($UNAME,3,50) )
+				die('2');
+
+			if( !filter_var($UMAIL, FILTER_VALIDATE_EMAIL) )
+				die('3');
+
+			if( $UWEB!='' AND !filter_var($UWEB, FILTER_VALIDATE_URL) )
+				die('4');
 		}
 
 
@@ -67,7 +67,7 @@
 			die('5');
 
 		$SENDCMT = $SQL->query("INSERT INTO COMMENTS (TYPE,SENDER,POST,NAME,EMAIL,WEB,TXT,TIME)".
-		"VALUES (1,".$UID.",'".scape($PID)."','".scape($UNAME)."','".scape($UMAIL)."','".scape($UWEB)."','".scape($_POST['CMT'])."','".time()."');");
+		"VALUES (2,".$UID.",'".scape($PID)."','".scape($UNAME)."','".scape($UMAIL)."','".scape($UWEB)."','".scape($_POST['CMT'])."','".time()."');");
 
 		if( $SENDCMT!==false )
 		{

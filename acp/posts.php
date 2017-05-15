@@ -42,7 +42,7 @@
 		$TITLE = 'همه مطالب';
 	}
 
-	$POSTS = $SQL->query("SELECT P.ID AS PID,P.TYPE,P.TITLE,P.STEXT,P.TIME,U.NAME AS AUTHOR,C.NAME AS CAT FROM POSTS AS P, USERS AS U, CATS AS C WHERE P.AUTHOR=U.ID AND P.CAT=C.ID".scape($TYPE));
+	$POSTS = $SQL->query("SELECT P.ID AS PID,P.TYPE,P.TITLE,P.STEXT,P.TIME,U.NAME AS AUTHOR,C.ID AS CID,C.NAME AS CAT FROM POSTS AS P, USERS AS U, CATS AS C WHERE P.AUTHOR=U.ID AND P.CAT=C.ID".scape($TYPE));
 
 	if( $POSTS!==FALSE )
 	{
@@ -68,7 +68,7 @@
 								<span>'.$POST['TITLE'].'</span>
 							</td>
 							<td>'.$POST['AUTHOR'].'</td>
-							<td>'.$POST['CAT'].'</td>
+							<td><a href="category.php?ID='.$POST['CID'].'">'.$POST['CAT'].'</a></td>
 							<td>
 								<span>'.$TYP[$POST['TYPE']].'</span>
 								<span>'.mds_date("j/F/Y",$POST['TIME']).'</span>

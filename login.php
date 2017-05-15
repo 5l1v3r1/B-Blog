@@ -51,7 +51,7 @@
 		session_regenerate_id(true);
 		$R = 1;
 	}else{
-		header("Location: index.php");
+		header('location: index.php');
 	}
 
 	echo $R;

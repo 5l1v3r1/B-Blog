@@ -82,7 +82,7 @@
 			if( isset($_POST['A']) OR isset($_GET['A']) )
 				die('403');
 			else{
-				header("Location: login.php");
+				header("Location: ../index.php");
 				exit();
 			}
 		}

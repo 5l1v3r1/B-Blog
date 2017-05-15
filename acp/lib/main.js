@@ -12,7 +12,7 @@ $(document).ready(function()
 		})
 		.ajaxSuccess(function(event, xhr, settings){
 			if( xhr.responseText=='403' )
-				showlogin();
+				tip('نشست فعلی شما منقظی شده است. لطفا در صفحه‌ی باز شده دوباره وارد حساب کاربری خود شوید و سپس دوباره امتحان کنید.');
 			else if( xhr.responseText=='-1' )
 				tip('خطای داخلی سمت سرور رخ داده است');
 			else
@@ -89,11 +89,12 @@ function mod_post(type=0)
 {
 	var id = $('.form #postid').val();
 	var title = $('.form #title').val();
+	var url = $('.form #url').val();
 	var text  = $('.form #text').val();
 	var cat = $('.form #cat').val();
 	var tags = $('.form #tags').val();
 
-	$.post("post.php?ID="+id,{A:'A',title:title,text:text,cat:cat,tags:tags,type:type})
+	$.post("post.php?ID="+id,{A:'A',title:title,url:url,text:text,cat:cat,tags:tags,type:type})
 		.done(function(r){
 			switch (r) {
 				case '0':
@@ -174,7 +175,7 @@ function tip(text='',cls="red")
 {
 	var t = ++tipid;
 
-	$('.tips').append('<div class="'+cls+'" id="tip'+t+'">'+text+'</div>');
+	$('.tips').append('<div class="'+cls+'" id="tip'+t+'">'+text+'<span class="fa-close" onclick="$(this).parent(\'div\').removeClass(\'tip\');"></span></div>');
 	setTimeout(function(){
 		$('.tips > div#tip'+t).addClass('tip');
 			setTimeout(function(){

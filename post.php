@@ -5,49 +5,54 @@
 		require_once('header.php');
 
 
-	if( isset($_GET['id']) && (int)$_GET['id']>0 )
+	if( isset($_GET['id']) OR isset($_GET['p']) )
 	{
-		$POSTID = scape((int)$_GET['id']);
-		$GET_POST = $SQL->query("SELECT P.ID AS PID,P.TITLE,P.STEXT,P.FTEXT,P.TIME,P.TAGS,U.USER,U.NAME AS AUTHOR,C.ID,C.NAME AS CNAME FROM POSTS AS P, USERS AS U, CATS AS C WHERE P.AUTHOR=U.ID AND P.CAT=C.ID AND P.TYPE=1 AND P.ID=".$POSTID.";");
+		if( isset($_GET['p']) AND strlen($_GET['p'])>0 )
+			$WHERE = "P.URL='".scape( substr($_GET['p'],0,255) )."'";
+		elseif( (int)$_GET['id']>0 )
+			$WHERE = "P.ID='".scape( (int)$_GET['id'] )."'";
+		else
+			$WHERE = "p.ID='0'";
+
+		$GET_POST = $SQL->query("SELECT P.ID AS PID,P.TITLE,P.STEXT,P.FTEXT,P.TIME,P.TAGS,U.ID AS UID,U.USER,U.NAME AS AUTHOR,C.ID AS CID,C.NAME AS CNAME FROM POSTS AS P, USERS AS U, CATS AS C WHERE P.AUTHOR=U.ID AND P.CAT=C.ID AND P.TYPE=1 AND ".$WHERE);
 
 		if( $GET_POST!==FALSE AND $GET_POST->num_rows==1 )
 		{
-			$P = $GET_POST->fetch_assoc();
+			$POST = $GET_POST->fetch_assoc();
 		?>
 			<div class="singlepost">
-				<div class="postsec">
-					<h3><?php eecho($P['TITLE']); ?></h3>
-					<div>
-						<p class="post-text"><?php eecho($P['STEXT']); ?></p>
-						<p class="post-text"><?php eecho($P['FTEXT']); ?></p>
-						<div class="postfooter">
-							<span><strong>تاریخ ارسال : </strong><?php echo mds_date("l  j F Y",$P['TIME']); ?></span>
-							<span><strong>نویسنده : </strong><?php eecho($P['AUTHOR']); ?></span>
-							<span><strong>دسته : </strong><?php eecho($P['CNAME']); ?></span>
-						</div>
+				<div class="post">
+					<h3><?php eecho($POST['TITLE']); ?></h3>
+					<p class="post-text"><?php eecho($POST['STEXT']); ?></p>
+					<p class="post-text"><?php eecho($POST['FTEXT']); ?></p>
+					<div class="postfooter">
+						<span class="fa-calendar"><strong>تاریخ ارسال : </strong><?php echo mds_date("l  j F Y",$POST['TIME']); ?></span>
+						<span class="fa-user"><strong>نویسنده : </strong><?php eecho($POST['AUTHOR']); ?></span>
+						<span class="fa-list"><strong>دسته : </strong><a href="index.php?CAT=<?php echo $POST['CID']; ?>"><?php eecho($POST['CNAME']); ?></a></span>
+						<?php if(isadmin()){ echo '<a na href="acp/post.php?ID='.$POST['PID'].'"><span class="fa-pencil">ویرایش مطلب</span></a>'; } ?>
 					</div>
 				</div>
 
-			<?php if( $P['TAGS']!=='' )
+			<?php if( $POST['TAGS']!=='' )
 			{	?>
 				<div class="tags">
-					<h3>برچسب ها</h3>
+					<h3 class="fa-hashtag">برچسب ها</h3>
 					<div><ul>
 						<?php
-							$TAGS = explode('+', $P['TAGS']);
+							$TAGS = explode('+', $POST['TAGS']);
 							foreach ($TAGS as $TAG)
 							{
-								echo '<a href="tags.php?N='.$TAG.'"><li>'.$TAG.'</li></a>';
+								echo '<a href="index.php?tag='.$TAG.'"><li>'.$TAG.'</li></a>';
 							}	?>
 					</ul></div>
 				</div>
 	<?php }
 
-			$GET_CMNT = $SQL->query("SELECT C.ID AS CID,C.SENDER,C.NAME,C.WEB,C.TXT,C.TIME,U.ID AS UID,U.NAME AS UNAME,U.WEB AS UWEB FROM COMMENTS AS C, USERS AS U WHERE C.SENDER=U.ID AND C.TYPE=1 AND C.POST='".$POSTID."';");
+			$GET_CMNT = $SQL->query("SELECT C.ID AS CID,C.SENDER,C.NAME,C.WEB,C.TXT,C.TIME,U.ID AS UID,U.NAME AS UNAME,U.WEB AS UWEB FROM COMMENTS AS C, USERS AS U WHERE C.SENDER=U.ID AND C.TYPE=1 AND C.POST='".$POST['PID']."';");
 
 			if( $GET_CMNT!==FALSE AND $GET_CMNT->num_rows>0 ){	?>
 				<div class="comments">
-					<h3>دیدگاه ها</h3>
+					<h3 class="fa-comments">دیدگاه ها</h3>
 					<div>
 						<?php while ( $CM=$GET_CMNT->fetch_assoc() ){
 							if( $CM['SENDER']!=='0' ){
@@ -72,7 +77,7 @@
 	<?php } ?>
 
 				<div class="sendcmt">
-					<h3>ارسال دیدگاه</h3>
+					<h3 class="fa-paper-plane">ارسال دیدگاه</h3>
 					<div>
 						<div<?php echo (logedin())?' style="display:none"':''; ?>>
 							<label>نام :</label>
@@ -90,7 +95,7 @@
 							<label>متن دیدگاه :</label>
 							<textarea id="comment_text" placeholder="دیدگاه تان را بنویسید..."></textarea>
 						</div>
-						<div><button onclick="sendcmt(<?php echo $P['PID']; ?>);">ارسال دیدگاه</button></div>
+						<div><button class="fa-paper-plane" onclick="sendcmt(<?php echo $POST['PID']; ?>);">ارسال دیدگاه</button></div>
 					</div>
 				</div>
 			</div>
