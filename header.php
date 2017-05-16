@@ -15,7 +15,6 @@
 	<div class="nav">
 		<ul>
 			<a href=""><li class="fa-home">صفحه اصلی</li></a>
-			<a href="cats"><li class="fa-list">دسته ها</li></a>
 			<a href="post?p=about"><li class="fa-info">درباره</li></a>
 			<a href="post?p=contact"><li class="fa-envelope">ارتباط</li></a>
 			<?php if( logedin() ){ ?><a href="" na onClick="logout();return false;"><li class="left fa-sign-out">خروج</li></a><?php } ?>

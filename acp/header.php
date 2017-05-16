@@ -48,7 +48,7 @@
 		</ul>
 		<span class="fa-cog">بیشتر</span>
 		<ul>
-			<a href="tags.php"><li>برچسب ها</li></a>
+			<a href=""><li>...</li></a>
 		</ul>
 	</div>
 

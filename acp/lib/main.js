@@ -11,9 +11,11 @@ $(document).ready(function()
 			tip('خطایی رخ داده است. ممکن است با بارگذاری دوباره صفحه مشکل حل شود.');
 		})
 		.ajaxSuccess(function(event, xhr, settings){
-			if( xhr.responseText=='403' )
+			if( xhr.responseText=='403' ){
 				tip('نشست فعلی شما منقظی شده است. لطفا در صفحه‌ی باز شده دوباره وارد حساب کاربری خود شوید و سپس دوباره امتحان کنید.');
-			else if( xhr.responseText=='-1' )
+				window.open(window.location.href);
+			}
+			else if( xhr.responseText=='-1' || xhr.responseText=='500' )
 				tip('خطای داخلی سمت سرور رخ داده است');
 			else
 				menuselect(event.target.URL);
@@ -192,5 +194,34 @@ function tip(text='',cls="red")
 function logout(){
 	$.get('../login.php?OUT').done(function(){
 		window.location = '../';
+	});
+}
+
+function comment(id,type)
+{
+	var typ;
+	switch (type) {
+		case -1:
+			typ = 'delete';
+			break;
+		case 0:
+			typ = 'reject';
+			break;
+		case 1:
+			typ = 'accept';
+			break;
+		default:
+			return;
+	}
+
+	$.get('comment?ID='+id+'&TYPE='+typ).done(function(d){
+		switch (d) {
+			case '404':
+				tip('دیدگاه مورد نظر پیدا نشد!');
+				break;
+			case '200':
+				window.location.reload();
+				break;
+		}
 	});
 }

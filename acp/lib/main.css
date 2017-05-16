@@ -316,7 +316,7 @@ button.none:hover{
 	top: 0px !important;
 }
 
-span.hover{
+tr span.hover{
 	display: inline-block;
 }
 
@@ -339,12 +339,16 @@ span.hover a:nth-child(1){
 span.hover a:nth-child(2){
 	background-color: #4CAF50;
 }
-span.hover a:nth-child(3){
+span.hover a:last-child{
 	background-color: #FF5722;
 }
 
 span.hover a.accept{
 	background-color: #0288d1;
+}
+
+span.hover a.ban{
+	background-color: #795548;
 }
 
 .top-nav li:before{

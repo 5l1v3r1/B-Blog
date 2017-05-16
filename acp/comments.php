@@ -69,12 +69,12 @@
 								<span>'.$TYP[$COMMENT['TYPE']].'</span>
 								<span>'.mds_date("j/F/Y",$COMMENT['TIME']).'</span>
 							</td>
-							<td>'.
-								( ($COMMENT['TYPE']==2) ? '<span class="hover"><a class="fa-check accept" href="../post.php?id='.$COMMENT['POST'].'" na target="_blank"></a></span>' : '' )
-								.'<span class="hover">
-									<a class="fa-eye" '.( ($COMMENT['TYPE']!=1) ? 'style="display:none"' : '' ).' href="../post.php?id='.$COMMENT['POST'].'" na target="_blank"></a>
-									<a class="fa-pencil" href="comment.php?ID='.$COMMENT['ID'].'"></a>
-									<a class="fa-trash" onclick="dltcomment('.$COMMENT['ID'].');" na></a>
+							<td>
+								<span class="hover">
+									<a class="fa-eye" '.( ($COMMENT['TYPE']!=1) ? 'style="display:none"' : '' ).' href="../post.php?id='.$COMMENT['POST'].'" na target="_blank"></a>'.
+									( ($COMMENT['TYPE']!=1) ? '<span class="hover"><a class="fa-check accept" onclick="comment('.$COMMENT['ID'].',1);" na></a></span>' : '' ).
+									( ($COMMENT['TYPE']!=0) ? '<span class="hover"><a class="fa-ban ban" onclick="comment('.$COMMENT['ID'].',0);" na></a></span>' : '' ).
+									'<a class="fa-trash" onclick="comment('.$COMMENT['ID'].',-1);" na></a>
 								</span>
 							</td>
 						</tr>';
